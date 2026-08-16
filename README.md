@@ -1,7 +1,7 @@
 <div align="center">
 विदेह (Videha)
 प्रथम मैथिली पाक्षिक ई-पत्रिका | The First Maithili Fortnightly eJournal
-(c) २०००-२०२६ | ISSN 2229-547X
+(c) २०००-२०२६ | https://videha-ejournal.github.io/videha/ ISSN 2229-547X
 ![Website](https://www.videha.co.in)
 ![ISSN](2229--547X)
 ![Editor](सम्पादक-गजेन्द्र_ठाकुर)
