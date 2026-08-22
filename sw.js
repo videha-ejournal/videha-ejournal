@@ -1,42 +1,37 @@
-const CACHE_NAME = "videha-ppt-player-v1";
-const APP_SHELL = [
-  "./",
-  "./index.html",
-  "./presentations.js"
-];
-
-// Single bundled module used by the player.
-// The service worker attempts to cache it for later offline reuse.
-const REMOTE_MODULE =
-  "https://esm.sh/pptx-preview@1.0.7?bundle&target=es2022";
+const CACHE_NAME = "videha-ppt-player-v2";
+const APP_SHELL = ["./","./index.html","./presentations.js"];
+const RENDERER =
+  "https://cdn.jsdelivr.net/npm/@aiden0z/pptx-renderer@1.2.4/dist/aiden0z-pptx-renderer.browser.es.js";
 
 self.addEventListener("install", event => {
   self.skipWaiting();
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
-    try { await cache.addAll(APP_SHELL); } catch (_) {}
-    try { await cache.add(REMOTE_MODULE); } catch (_) {}
+    for (const item of APP_SHELL) {
+      try { await cache.add(item); } catch (_) {}
+    }
+    try { await cache.add(RENDERER); } catch (_) {}
   })());
 });
 
 self.addEventListener("activate", event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)));
+    await Promise.all(keys.filter(k => k.startsWith("videha-ppt-player-v") && k !== CACHE_NAME).map(k => caches.delete(k)));
     await self.clients.claim();
   })());
 });
 
 self.addEventListener("fetch", event => {
   const req = event.request;
+  const url = new URL(req.url);
 
-  // Navigation: network first, cached shell fallback.
   if (req.mode === "navigate") {
     event.respondWith((async () => {
       try {
-        const fresh = await fetch(req);
+        const fresh = await fetch(req, {cache:"no-store"});
         const cache = await caches.open(CACHE_NAME);
-        cache.put("./index.html", fresh.clone()).catch(() => {});
+        cache.put("./index.html", fresh.clone()).catch(()=>{});
         return fresh;
       } catch (_) {
         return (await caches.match("./index.html")) || Response.error();
@@ -45,31 +40,18 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  // PPTX: network first so a replaced default can update, then cached copy.
-  if (/\.pptx(?:$|\?)/i.test(req.url)) {
-    event.respondWith((async () => {
-      try {
-        const fresh = await fetch(req);
-        if (fresh.ok) {
-          const cache = await caches.open(CACHE_NAME);
-          cache.put(req, fresh.clone()).catch(() => {});
-        }
-        return fresh;
-      } catch (_) {
-        return (await caches.match(req)) || Response.error();
-      }
-    })());
+  if (/\.pptx(?:$|\?)/i.test(url.pathname + url.search)) {
+    // Do not block PPTX with the service worker. Let page code handle fallback/cache.
     return;
   }
 
-  // Static/module assets: cache first, network and cache on miss.
   event.respondWith((async () => {
     const cached = await caches.match(req);
     if (cached) return cached;
     const fresh = await fetch(req);
     if (fresh && (fresh.ok || fresh.type === "opaque")) {
       const cache = await caches.open(CACHE_NAME);
-      cache.put(req, fresh.clone()).catch(() => {});
+      cache.put(req, fresh.clone()).catch(()=>{});
     }
     return fresh;
   })());

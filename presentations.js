@@ -1,25 +1,11 @@
-/* VIDEHA PPT PLAYER — presentation library configuration
-   Add future presentations here. No HTML editing is required.
-
-   For a GitHub-hosted PPTX:
-     { title: "My PPT", url: "./presentations/my-file.pptx" }
-
-   For a large Archive.org PPTX that readers should download first:
-     {
-       title: "Large presentation",
-       downloadUrl: "https://archive.org/download/ITEM/file.pptx",
-       downloadOnly: true
-     }
-
-   Change cacheVersion when replacing a file but keeping the same URL/filename.
-*/
+/* VIDEHA PPT PLAYER — presentation library configuration */
 window.VIDEHA_PPT_CONFIG = {
-  cacheVersion: "2026-08-22-1",
+  cacheVersion: "2026-08-22-2",
 
-  // Put your always-available GitHub PPTX at this path.
   defaultPresentation: {
     title: "Default Videha Presentation",
     url: "./presentations/default.pptx",
+    fallbackUrl: "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/presentations/default.pptx",
     autoLoad: true
   },
 
@@ -32,7 +18,13 @@ window.VIDEHA_PPT_CONFIG = {
         {
           title: "Default Videha Presentation",
           url: "./presentations/default.pptx",
+          fallbackUrl: "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/presentations/default.pptx",
           badge: "DEFAULT"
+        },
+        {
+          title: "Videha Teaching — Water Burial",
+          url: "./Videha_Teaching_Water_Burial.pptx",
+          fallbackUrl: "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Videha_Teaching_Water_Burial.pptx"
         }
       ]
     },
@@ -41,12 +33,12 @@ window.VIDEHA_PPT_CONFIG = {
       subtitle: "Archive.org / download-first presentations",
       open: false,
       items: [
-        // Example:
-        // {
-        //   title: "Large Teaching Course",
-        //   downloadUrl: "https://archive.org/download/ITEM_NAME/file.pptx",
-        //   downloadOnly: true
-        // }
+        {
+          title: "Gohi Jalsamadhi Teaching — Archive.org",
+          downloadUrl: "https://archive.org/download/videha-petar-2/Gohi_Jalsamadhi_Teaching_merge.pptx",
+          downloadOnly: true,
+          tryDirect: true
+        }
       ]
     }
   ]

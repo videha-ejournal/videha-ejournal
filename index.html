@@ -145,7 +145,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{
 }
 #stageScaler{transform-origin:top center;transition:transform .15s}
 #pptxMount{
-  width:960px;height:540px;background:#fff;overflow:hidden;position:relative
+  width:min(100%,1280px);height:min(72vh,720px);min-height:360px;
+  background:#fff;overflow:hidden;position:relative;margin:auto
 }
 .empty-stage{
   position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;
@@ -242,7 +243,7 @@ details[open] > summary .vd-fold-triangle{transform:rotate(180deg)}
 
 @media(max-width:920px){
   .workspace{grid-template-columns:140px minmax(0,1fr)}
-  #pptxMount{width:800px;height:450px}
+  #pptxMount{height:min(68vh,640px);min-height:320px}
   .lower-grid{grid-template-columns:1fr}
 }
 @media(max-width:680px){
@@ -253,7 +254,7 @@ details[open] > summary .vd-fold-triangle{transform:rotate(180deg)}
   .top-actions{grid-template-columns:1fr}
   .workspace{grid-template-columns:1fr}
   .thumb-panel{display:none}
-  #pptxMount{width:640px;height:360px}
+  #pptxMount{height:58vh;min-height:260px}
   .stage-shell{min-height:220px;padding:6px}
   .controls{gap:4px}
   .ctrl{min-width:40px}
@@ -436,10 +437,15 @@ details[open] > summary .vd-fold-triangle{transform:rotate(180deg)}
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script type="module">
-import { init as initPptxPreview } from "https://esm.sh/pptx-preview@1.0.7?bundle&target=es2022";
+import {
+  PptxViewer,
+  RECOMMENDED_ZIP_LIMITS
+} from "https://cdn.jsdelivr.net/npm/@aiden0z/pptx-renderer@1.2.4/dist/aiden0z-pptx-renderer.browser.es.js";
 
 const CONFIG = window.VIDEHA_PPT_CONFIG || {};
-const CACHE_NAME = "videha-ppt-player-pptx-" + (CONFIG.cacheVersion || "1");
+const CACHE_NAME = "videha-ppt-player-pptx-" + (CONFIG.cacheVersion || "2");
+const RAW_DEFAULT_FALLBACK =
+  "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/presentations/default.pptx";
 
 const el = id => document.getElementById(id);
 const status = el("status");
@@ -456,13 +462,14 @@ const zoomReadout = el("zoomReadout");
 const stageScaler = el("stageScaler");
 
 let viewer = null;
-let currentBuffer = null;
 let currentIndex = 0;
 let slideCount = 0;
 let autoplayTimer = null;
 let zoom = 1;
 let currentTitle = "";
 let loadToken = 0;
+let thumbObserver = null;
+let thumbHandles = [];
 
 function setStatus(message, kind="") {
   status.classList.toggle("ok", kind === "ok");
@@ -494,15 +501,22 @@ addEventListener("online", updateNetwork);
 addEventListener("offline", updateNetwork);
 updateNetwork();
 
-function stripIds(node) {
-  if (node.nodeType !== 1) return;
-  node.removeAttribute("id");
-  for (const child of node.children) stripIds(child);
+function disposeThumbs() {
+  if (thumbObserver) {
+    try { thumbObserver.disconnect(); } catch (_) {}
+    thumbObserver = null;
+  }
+  for (const h of thumbHandles) {
+    try { h?.dispose?.(); } catch (_) {}
+  }
+  thumbHandles = [];
 }
 
 function createThumbs(count) {
+  disposeThumbs();
   thumbList.innerHTML = "";
   const frag = document.createDocumentFragment();
+
   for (let i=0;i<count;i++) {
     const b = document.createElement("button");
     b.type = "button";
@@ -514,41 +528,43 @@ function createThumbs(count) {
     frag.appendChild(b);
   }
   thumbList.appendChild(frag);
-}
 
-function snapshotCurrentThumb() {
-  const button = thumbList.querySelector(`.thumb[data-index="${currentIndex}"]`);
-  if (!button || button.querySelector(".thumb-snapshot")) return;
+  // Render only thumbnails that become visible. This scales to large decks.
+  if ("IntersectionObserver" in window && viewer?.renderThumbnailToContainer) {
+    thumbObserver = new IntersectionObserver(async entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const button = entry.target;
+        thumbObserver.unobserve(button);
+        const index = Number(button.dataset.index);
+        try {
+          const ph = button.querySelector(".thumb-placeholder");
+          if (ph) ph.remove();
 
-  const source = mount.firstElementChild;
-  if (!source) return;
+          const host = document.createElement("span");
+          host.style.cssText = "position:absolute;inset:0;overflow:hidden;display:block;background:#fff";
+          button.insertBefore(host, button.firstChild);
 
-  const clone = source.cloneNode(true);
-  stripIds(clone);
-  clone.querySelectorAll("video,audio,iframe").forEach(n => {
-    const ph = document.createElement("div");
-    ph.style.cssText = "position:absolute;inset:0;background:#222";
-    n.replaceWith(ph);
-  });
-  clone.classList.add("thumb-snapshot");
-
-  const sourceW = mount.clientWidth || 960;
-  const thumbW = button.clientWidth || 160;
-  const scale = thumbW / sourceW;
-  clone.style.width = sourceW + "px";
-  clone.style.height = (mount.clientHeight || 540) + "px";
-  clone.style.transform = `scale(${scale})`;
-
-  const ph = button.querySelector(".thumb-placeholder");
-  if (ph) ph.remove();
-  button.insertBefore(clone, button.firstChild);
+          const handle = viewer.renderThumbnailToContainer(index, host, {width: Math.max(120, button.clientWidth || 160)});
+          if (handle) {
+            thumbHandles[index] = handle;
+            await handle.ready;
+          }
+        } catch (err) {
+          console.warn("Thumbnail failed", index, err);
+        }
+      }
+    }, {root: el("thumbList"), rootMargin:"250px 0px"});
+    thumbList.querySelectorAll(".thumb").forEach(b => thumbObserver.observe(b));
+  }
 }
 
 function updateThumbActive() {
   thumbList.querySelectorAll(".thumb").forEach((b,i) => {
     b.classList.toggle("active", i === currentIndex);
-    if (i === currentIndex) b.scrollIntoView({block:"nearest",behavior:"smooth"});
   });
+  const active = thumbList.querySelector(`.thumb[data-index="${currentIndex}"]`);
+  if (active) active.scrollIntoView({block:"nearest",behavior:"smooth"});
 }
 
 function updateControls() {
@@ -563,8 +579,9 @@ function updateControls() {
 }
 
 function applyZoom() {
+  stageScaler.style.transformOrigin = "top center";
   stageScaler.style.transform = `scale(${zoom})`;
-  stageScaler.style.margin = `${Math.max(0,(zoom-1)*270)}px 0`;
+  stageScaler.style.marginBottom = `${Math.max(0,(zoom-1) * 150)}px`;
   updateControls();
 }
 function setZoom(v) {
@@ -572,11 +589,9 @@ function setZoom(v) {
   applyZoom();
 }
 function fitSlide() {
-  const shell = el("stageShell");
-  const availableW = Math.max(260, shell.clientWidth - 24);
-  const availableH = Math.max(180, Math.min(window.innerHeight * .70, shell.clientHeight || window.innerHeight * .65) - 24);
-  const z = Math.min(availableW / mount.clientWidth, availableH / mount.clientHeight, 1.35);
-  setZoom(z);
+  zoom = 1;
+  applyZoom();
+  if (viewer?.setFitMode) viewer.setFitMode("contain").catch?.(()=>{});
 }
 
 function stopAutoplay() {
@@ -602,82 +617,84 @@ function toggleAutoplay() {
   autoplayTimer ? stopAutoplay() : startAutoplay();
 }
 
-async function ensureViewer() {
+async function destroyViewer() {
+  disposeThumbs();
   if (viewer) {
     try { viewer.destroy(); } catch (_) {}
+    viewer = null;
   }
   mount.innerHTML = "";
-  viewer = initPptxPreview(mount, {
-    width: 960,
-    height: 540,
-    mode: "slide"
-  });
 }
 
 async function loadBuffer(buffer, title="Presentation") {
   const myToken = ++loadToken;
   stopAutoplay();
-  setStatus(`Opening ${title}…`);
-  showProgress(55);
-  currentBuffer = buffer;
+  setStatus(`Rendering ${title}…`);
+  showProgress(70);
   currentTitle = title;
   emptyStage.hidden = true;
 
   try {
-    await ensureViewer();
-    if (myToken !== loadToken) return;
+    await destroyViewer();
+    if (myToken !== loadToken) return false;
 
-    // Load once, then render only the requested slide.
-    await viewer.load(buffer);
-    if (myToken !== loadToken) return;
+    viewer = await PptxViewer.open(buffer, mount, {
+      renderMode: "slide",
+      fitMode: "contain",
+      zipLimits: RECOMMENDED_ZIP_LIMITS,
+      lazySlides: true,
+      lazyMedia: true,
+      pdfjs: false
+    });
+
+    if (myToken !== loadToken) {
+      try { viewer.destroy(); } catch (_) {}
+      return false;
+    }
 
     slideCount = Number(viewer.slideCount) || 0;
     if (!slideCount) throw new Error("No slides were detected in this PPTX.");
 
-    currentIndex = 0;
+    currentIndex = Number(viewer.currentSlideIndex) || 0;
     createThumbs(slideCount);
-    viewer.renderSingleSlide(0);
-    await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
-    snapshotCurrentThumb();
     updateThumbActive();
     updateControls();
     fitSlide();
     hideProgress();
     setStatus(`${title} — ${slideCount} slide${slideCount === 1 ? "" : "s"} loaded.`, "ok");
+    return true;
   } catch (err) {
     console.error(err);
     slideCount = 0;
     currentIndex = 0;
-    currentBuffer = null;
-    mount.innerHTML = "";
+    await destroyViewer();
     emptyStage.hidden = false;
     hideProgress();
     updateControls();
-    setStatus(`Could not render this PPTX: ${err?.message || err}`, "err");
+    setStatus(`PPTX was fetched, but could not be rendered: ${err?.message || err}`, "err");
+    return false;
   }
 }
 
-function showSlide(index) {
+async function showSlide(index) {
   if (!viewer || !slideCount) return;
   index = Math.max(0, Math.min(slideCount-1, Number(index)||0));
-  currentIndex = index;
   try {
-    viewer.renderSingleSlide(index);
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      snapshotCurrentThumb();
-      updateThumbActive();
-      updateControls();
-    }));
+    await viewer.renderSlide(index);
+    currentIndex = index;
+    updateThumbActive();
+    updateControls();
   } catch (err) {
     console.error(err);
-    setStatus(`Slide ${index+1} could not be rendered.`, "err");
+    setStatus(`Slide ${index+1} could not be rendered: ${err?.message || err}`, "err");
   }
-  updateThumbActive();
-  updateControls();
 }
 
 async function fetchWithProgress(url) {
-  const response = await fetch(url);
+  const bust = url.includes("?") ? "&" : "?";
+  const requestUrl = url.startsWith("./") ? `${url}${bust}v=${encodeURIComponent(CONFIG.cacheVersion || "2")}` : url;
+
+  const response = await fetch(requestUrl, {cache:"no-store"});
   if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
 
   const total = Number(response.headers.get("content-length")) || 0;
@@ -685,6 +702,7 @@ async function fetchWithProgress(url) {
     showProgress(null);
     return await response.arrayBuffer();
   }
+
   const reader = response.body.getReader();
   let loaded = 0;
   const chunks = [];
@@ -693,7 +711,7 @@ async function fetchWithProgress(url) {
     if (done) break;
     chunks.push(value);
     loaded += value.byteLength;
-    showProgress((loaded/total)*100);
+    showProgress((loaded/total)*65);
   }
   const out = new Uint8Array(loaded);
   let offset = 0;
@@ -704,60 +722,69 @@ async function fetchWithProgress(url) {
   return out.buffer;
 }
 
-async function cacheArrayBuffer(url, buffer) {
+async function cacheArrayBuffer(key, buffer) {
   if (!("caches" in window)) return;
   try {
     const cache = await caches.open(CACHE_NAME);
-    const copy = buffer.slice(0);
-    await cache.put(url, new Response(copy, {
+    await cache.put(key, new Response(buffer.slice(0), {
       headers: {"Content-Type":"application/vnd.openxmlformats-officedocument.presentationml.presentation"}
     }));
   } catch (e) {
     console.warn("PPTX cache unavailable", e);
   }
 }
-async function cachedArrayBuffer(url) {
+async function cachedArrayBuffer(key) {
   if (!("caches" in window)) return null;
   try {
-    const hit = await caches.match(url);
+    const cache = await caches.open(CACHE_NAME);
+    const hit = await cache.match(key);
     return hit ? await hit.arrayBuffer() : null;
   } catch (_) { return null; }
 }
 
-async function loadUrl(url, title=null, preferCache=false) {
+async function tryFetchCandidate(url, label) {
+  setStatus(`Fetching ${label}…`);
+  showProgress(6);
+  const buf = await fetchWithProgress(url);
+  await cacheArrayBuffer(url, buf);
+  return buf;
+}
+
+async function loadUrl(url, title=null, options={}) {
   url = (url || "").trim();
-  if (!url) return;
-  if (!/\.pptx(?:$|[?#])/i.test(url)) {
-    toast("The URL should point directly to a .pptx file.");
-  }
+  if (!url) return false;
 
   const name = title || decodeURIComponent(url.split("/").pop().split(/[?#]/)[0]) || "Web presentation";
-  setStatus(`Fetching ${name}…`);
-  showProgress(8);
+  const candidates = [url];
 
-  if (preferCache) {
-    const cached = await cachedArrayBuffer(url);
-    if (cached) {
-      setStatus(`Opening cached ${name}…`);
-      return loadBuffer(cached, name + " (cached)");
+  if (options.fallbackUrl && options.fallbackUrl !== url) {
+    candidates.push(options.fallbackUrl);
+  }
+
+  let lastError = null;
+  for (let i=0;i<candidates.length;i++) {
+    const candidate = candidates[i];
+    try {
+      const buffer = await tryFetchCandidate(candidate, i === 0 ? name : `${name} (GitHub raw fallback)`);
+      return await loadBuffer(buffer, name);
+    } catch (err) {
+      lastError = err;
+      console.warn("Fetch candidate failed:", candidate, err);
     }
   }
 
-  try {
-    const buffer = await fetchWithProgress(url);
-    cacheArrayBuffer(url, buffer);
-    await loadBuffer(buffer, name);
-  } catch (err) {
-    console.warn(err);
-    const cached = await cachedArrayBuffer(url);
+  // Last resort: cached copy under either URL.
+  for (const candidate of candidates) {
+    const cached = await cachedArrayBuffer(candidate);
     if (cached) {
-      setStatus(`Network unavailable; opening cached ${name}…`);
-      await loadBuffer(cached, name + " (cached)");
-      return;
+      setStatus(`Network fetch failed; opening cached ${name}…`);
+      return await loadBuffer(cached, `${name} (cached)`);
     }
-    hideProgress();
-    setStatus(`Could not fetch ${name}. If this is an Archive.org or other remote file, download it first and use Open local PPT/PPTX.`, "err");
   }
+
+  hideProgress();
+  setStatus(`Could not fetch ${name}: ${lastError?.message || "network error"}.`, "err");
+  return false;
 }
 
 async function loadDefault() {
@@ -766,25 +793,32 @@ async function loadDefault() {
     setStatus("No default presentation is configured. Use local file or URL.", "err");
     return;
   }
-  await loadUrl(d.url, d.title || "Default presentation", false);
+  await loadUrl(
+    d.url,
+    d.title || "Default presentation",
+    {fallbackUrl: d.fallbackUrl || RAW_DEFAULT_FALLBACK}
+  );
 }
 
 function openLocalFile(file) {
   if (!file) return;
   const lower = file.name.toLowerCase();
+
   if (lower.endsWith(".ppt")) {
-    setStatus("Legacy .ppt is the older binary format and is not reliably supported in a pure browser renderer. Convert it to .pptx, then open it here.", "err");
+    setStatus("Legacy .ppt is the older binary format. Convert it to .pptx, then open it here.", "err");
     return;
   }
   if (!lower.endsWith(".pptx")) {
     setStatus("Please choose a PowerPoint .pptx file.", "err");
     return;
   }
+
   setStatus(`Reading ${file.name} from this device…`);
-  showProgress(20);
+  showProgress(10);
+
   const reader = new FileReader();
   reader.onprogress = e => {
-    if (e.lengthComputable) showProgress((e.loaded/e.total)*100);
+    if (e.lengthComputable) showProgress((e.loaded/e.total)*65);
   };
   reader.onerror = () => {
     hideProgress();
@@ -832,12 +866,14 @@ function buildLibrary() {
         const copy = document.createElement("div");
         copy.innerHTML = `<div class="lib-name"></div><div class="lib-meta"></div>`;
         copy.querySelector(".lib-name").textContent = item.title || "Presentation";
+
         if (item.badge) {
           const b = document.createElement("span");
           b.className = "badge";
           b.textContent = item.badge;
           copy.querySelector(".lib-name").appendChild(b);
         }
+
         copy.querySelector(".lib-meta").textContent =
           item.downloadOnly ? "Download first → Open local PPTX" :
           item.url ? "Direct browser presentation" : "Presentation";
@@ -850,7 +886,7 @@ function buildLibrary() {
           p.type = "button";
           p.className = "small-btn play";
           p.textContent = "▶ Play";
-          p.addEventListener("click", () => loadUrl(item.url, item.title));
+          p.addEventListener("click", () => loadUrl(item.url, item.title, {fallbackUrl:item.fallbackUrl}));
           actions.appendChild(p);
         }
 
@@ -904,44 +940,46 @@ el("speedSelect").addEventListener("change", () => { if (autoplayTimer) startAut
 el("zoomOutBtn").addEventListener("click", () => setZoom(zoom-.1));
 el("zoomInBtn").addEventListener("click", () => setZoom(zoom+.1));
 el("fitBtn").addEventListener("click", fitSlide);
+
 el("thumbBtn").addEventListener("click", () => {
   workspace.classList.toggle("thumbs-hidden");
-  setTimeout(fitSlide,50);
 });
 el("hideThumbsSide").addEventListener("click", () => {
   workspace.classList.add("thumbs-hidden");
-  setTimeout(fitSlide,50);
 });
 
 el("fullBtn").addEventListener("click", async () => {
   try {
     if (!document.fullscreenElement) await el("stageShell").requestFullscreen();
     else await document.exitFullscreen();
-  } catch (_) { toast("Fullscreen is not available in this browser."); }
+  } catch (_) {
+    toast("Fullscreen is not available in this browser.");
+  }
 });
-document.addEventListener("fullscreenchange", () => setTimeout(fitSlide,60));
 
 document.addEventListener("keydown", e => {
   const tag = document.activeElement?.tagName;
   if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
   if (!slideCount) return;
 
-  if (["ArrowRight","PageDown"].includes(e.key)) { e.preventDefault(); showSlide(currentIndex+1); }
-  else if (["ArrowLeft","PageUp"].includes(e.key)) { e.preventDefault(); showSlide(currentIndex-1); }
-  else if (e.key === "Home") { e.preventDefault(); showSlide(0); }
-  else if (e.key === "End") { e.preventDefault(); showSlide(slideCount-1); }
-  else if (e.key === " "){ e.preventDefault(); toggleAutoplay(); }
-  else if (e.key.toLowerCase() === "f"){
+  if (["ArrowRight","PageDown"].includes(e.key)) {
+    e.preventDefault(); showSlide(currentIndex+1);
+  } else if (["ArrowLeft","PageUp"].includes(e.key)) {
+    e.preventDefault(); showSlide(currentIndex-1);
+  } else if (e.key === "Home") {
+    e.preventDefault(); showSlide(0);
+  } else if (e.key === "End") {
+    e.preventDefault(); showSlide(slideCount-1);
+  } else if (e.key === " ") {
+    e.preventDefault(); toggleAutoplay();
+  } else if (e.key.toLowerCase() === "f") {
     e.preventDefault(); el("fullBtn").click();
   }
 });
 
-window.addEventListener("resize", () => { if (slideCount) fitSlide(); });
-
 buildLibrary();
 updateControls();
 
-// Automatically load one configured GitHub default presentation.
 if (CONFIG.defaultPresentation?.autoLoad !== false && CONFIG.defaultPresentation?.url) {
   loadDefault();
 }
