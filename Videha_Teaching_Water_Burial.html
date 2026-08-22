@@ -53,8 +53,11 @@
       <a class="vtw-btn navy" href="https://archive.org/download/videha-petar-2/Gohi_Jalsamadhi_Teaching_merge.pptx" target="_blank" rel="noopener">Archive.org PPTX ↓</a>
       <button class="vtw-btn ghost" type="button" id="viewGithub">View GitHub copy</button>
       <button class="vtw-btn ghost" type="button" id="viewArchive">View Archive copy</button>
+      <button class="vtw-btn ghost" type="button" id="openLocal">📂 Open local PPT/PPTX</button>
+      <button class="vtw-btn ghost" type="button" id="openUrl">🔗 Open PPTX URL</button>
+      <input id="localPptInput" type="file" accept=".ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation" hidden>
     </div>
-    <p class="vtw-note">The embedded viewer uses Microsoft Office Online and therefore requires an internet connection. If the viewer is unavailable, use either direct PPTX link above.</p>
+    <p class="vtw-note">The embedded viewer uses Microsoft Office Online and therefore requires an internet connection. The URL button can load any publicly accessible PPT/PPTX link. Local PPT/PPTX files stay on your device; the browser will open them with its available local/system handler rather than uploading them to Videha.</p>
   </section>
 
   <section class="vtw-viewer-wrap" aria-labelledby="viewerTitle">
@@ -93,6 +96,47 @@
   }
   document.getElementById('viewGithub').addEventListener('click', function(){showPpt(githubPpt,'GitHub PPTX');});
   document.getElementById('viewArchive').addEventListener('click', function(){showPpt(archivePpt,'Archive.org PPTX');});
+
+  const localInput = document.getElementById('localPptInput');
+  document.getElementById('openLocal').addEventListener('click', function(){
+    localInput.value = '';
+    localInput.click();
+  });
+
+  localInput.addEventListener('change', function(){
+    const file = localInput.files && localInput.files[0];
+    if(!file) return;
+    const ok = /\.(ppt|pptx)$/i.test(file.name);
+    if(!ok){
+      alert('Please choose a PPT or PPTX file.');
+      return;
+    }
+    const localUrl = URL.createObjectURL(file);
+    label.textContent = 'Local file: ' + file.name + ' — opening with browser/system handler';
+    const a = document.createElement('a');
+    a.href = localUrl;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.click();
+    setTimeout(function(){ URL.revokeObjectURL(localUrl); }, 60000);
+  });
+
+  document.getElementById('openUrl').addEventListener('click', function(){
+    const entered = prompt('Paste a public PPT/PPTX URL:');
+    if(!entered) return;
+    let url;
+    try {
+      url = new URL(entered.trim(), window.location.href);
+    } catch(e) {
+      alert('Please enter a valid PPT/PPTX URL.');
+      return;
+    }
+    if(!/^https?:$/i.test(url.protocol)){
+      alert('Only http:// or https:// PPT/PPTX URLs can be opened in the online viewer.');
+      return;
+    }
+    showPpt(url.href, 'Custom PPT/PPTX URL');
+  });
 })();
 </script>
 </body>
