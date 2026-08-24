@@ -1,5 +1,5 @@
-const CACHE_NAME = "videha-ppt-player-v2";
-const APP_SHELL = ["./","./index.html","./presentations.js"];
+const CACHE_NAME = "videha-presentation-hub-v3";
+const APP_SHELL = ["./","./index.html","./ppt-player.html","./presentations.js"];
 const RENDERER =
   "https://cdn.jsdelivr.net/npm/@aiden0z/pptx-renderer@1.2.4/dist/aiden0z-pptx-renderer.browser.es.js";
 
@@ -17,7 +17,9 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k.startsWith("videha-ppt-player-v") && k !== CACHE_NAME).map(k => caches.delete(k)));
+    await Promise.all(keys.filter(k =>
+      (k.startsWith("videha-ppt-player-v") || k.startsWith("videha-presentation-hub-v")) && k !== CACHE_NAME
+    ).map(k => caches.delete(k)));
     await self.clients.claim();
   })());
 });
@@ -31,10 +33,10 @@ self.addEventListener("fetch", event => {
       try {
         const fresh = await fetch(req, {cache:"no-store"});
         const cache = await caches.open(CACHE_NAME);
-        cache.put("./index.html", fresh.clone()).catch(()=>{});
+        cache.put(req, fresh.clone()).catch(()=>{});
         return fresh;
       } catch (_) {
-        return (await caches.match("./index.html")) || Response.error();
+        return (await caches.match(req)) || (await caches.match("./index.html")) || Response.error();
       }
     })());
     return;

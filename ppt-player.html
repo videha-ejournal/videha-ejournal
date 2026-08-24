@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="mai">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#8B1A1A">
+<title>VIDEHA PPT PLAYER · विदेह PPT प्लेयर</title>
+<meta name="description" content="Browser-based PPTX player for Videha. GitHub default presentation, local PPTX, URL loading, Archive.org download workflow, fullscreen, autoplay, thumbnails and accessible controls.">
+
+<script>
+/* Register early so later visits can reuse cached shell/module/default PPTX. */
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+</script>
+
+<script src="./presentations.js"></script>
+
+<style>
+:root{
+  --vd-crimson:#8B1A1A;
+  --vd-gold:#C77B2C;
+  --vd-cream:#FAF6EE;
+  --vd-cream2:#F3ECDC;
+  --vd-rule:#D8CFC0;
+  --vd-ink:#23201B;
+  --vd-ink-soft:#5C554C;
+  --vd-navy:#172A45;
+  --vd-green:#2E6B47;
+  --vd-danger:#9C2B2B;
+  --shadow:0 8px 30px rgba(35,32,27,.12);
+  --radius:4px;
+}
+*{box-sizing:border-box}
+html{background:#EEE9DF;color:var(--vd-ink);font-family:"Noto Serif Devanagari","Noto Serif",Georgia,serif}
+body{margin:0;min-height:100vh;background:linear-gradient(#f8f4ec,#eee7dc)}
+button,input,select{font:inherit}
+button,a,.file-button{touch-action:manipulation}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{
+  outline:3px solid #1d66c2;outline-offset:3px
+}
+.skip-link{
+  position:fixed;left:10px;top:-80px;z-index:9999;
+  background:#fff;color:#000;padding:8px 12px;border:2px solid #000
+}
+.skip-link:focus{top:10px}
+.app{max-width:1500px;margin:auto;padding:12px}
+.masthead{
+  background:var(--vd-cream);border:1px solid var(--vd-rule);
+  border-left:5px solid var(--vd-crimson);padding:12px 15px;
+  display:flex;align-items:center;gap:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)
+}
+.mh-flags{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.mh-flag-svg{
+  width:52px;height:auto;display:block;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.12));
+  border:1px solid var(--vd-rule);background:#fff
+}
+.mh-flag-nepal{border:0;background:transparent}
+.mh-copy{min-width:0;flex:1}
+.mh-kicker{
+  color:var(--vd-gold);font-size:.72rem;letter-spacing:.15em;
+  font-weight:800;text-transform:uppercase
+}
+.mh-title{
+  margin:1px 0;color:var(--vd-crimson);font-size:clamp(1.15rem,2.4vw,1.8rem);
+  line-height:1.15;font-weight:800
+}
+.mh-sub{color:var(--vd-ink-soft);font-size:.86rem;line-height:1.35}
+.net-pill{
+  margin-left:auto;border:1px solid var(--vd-rule);background:#fff;
+  padding:5px 8px;font-size:.75rem;white-space:nowrap
+}
+.net-pill.online{color:var(--vd-green)}
+.net-pill.offline{color:var(--vd-danger)}
+.top-actions{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0
+}
+.action-card{
+  min-height:48px;border:1px solid var(--vd-rule);background:#fff;color:var(--vd-ink);
+  padding:10px 12px;cursor:pointer;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-weight:700
+}
+.action-card:hover{border-color:var(--vd-gold);background:#fffdf8}
+.action-card.primary{background:var(--vd-crimson);color:#fff;border-color:var(--vd-crimson)}
+.file-button input{display:none}
+
+.statusbar{
+  min-height:42px;margin:8px 0;padding:8px 11px;background:#fff;
+  border:1px solid var(--vd-rule);display:flex;align-items:center;gap:9px;
+  font-size:.84rem
+}
+.status-dot{width:9px;height:9px;border-radius:50%;background:var(--vd-gold);flex:0 0 auto}
+.statusbar.ok .status-dot{background:var(--vd-green)}
+.statusbar.err .status-dot{background:var(--vd-danger)}
+.progress{
+  margin-left:auto;width:min(260px,36vw);height:7px;background:#e8e2d8;overflow:hidden
+}
+.progress > span{display:block;height:100%;width:0;background:var(--vd-crimson);transition:width .18s}
+.progress[hidden]{display:none}
+
+.workspace{
+  display:grid;grid-template-columns:190px minmax(0,1fr);gap:10px;align-items:start
+}
+.workspace.thumbs-hidden{grid-template-columns:minmax(0,1fr)}
+.workspace.thumbs-hidden .thumb-panel{display:none}
+.thumb-panel{
+  position:sticky;top:8px;max-height:calc(100vh - 20px);overflow:auto;
+  background:#fff;border:1px solid var(--vd-rule)
+}
+.thumb-head{
+  position:sticky;top:0;z-index:2;background:var(--vd-cream2);
+  padding:8px 9px;border-bottom:1px solid var(--vd-rule);
+  display:flex;align-items:center;justify-content:space-between;font-size:.8rem;font-weight:800
+}
+.thumb-list{padding:7px;display:grid;gap:7px}
+.thumb{
+  width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#ece8df;
+  border:2px solid transparent;cursor:pointer;padding:0
+}
+.thumb.active{border-color:var(--vd-crimson)}
+.thumb-number{
+  position:absolute;right:4px;bottom:3px;z-index:4;background:rgba(0,0,0,.72);
+  color:#fff;font:700 10px/1.2 system-ui,sans-serif;padding:2px 4px
+}
+.thumb-placeholder{
+  position:absolute;inset:0;display:grid;place-items:center;color:#756f66;
+  font:700 18px/1 system-ui,sans-serif
+}
+.thumb-snapshot{
+  position:absolute;left:0;top:0;transform-origin:top left;pointer-events:none
+}
+
+.player-card{
+  background:#181818;border:1px solid #111;box-shadow:var(--shadow);min-width:0
+}
+.stage-shell{
+  position:relative;display:grid;place-items:center;min-height:280px;
+  overflow:auto;background:
+    linear-gradient(45deg,#1c1c1c 25%,transparent 25%) 0 0/20px 20px,
+    linear-gradient(45deg,transparent 75%,#1c1c1c 75%) 0 0/20px 20px,
+    #202020;
+  padding:12px
+}
+#stageScaler{transform-origin:top center;transition:transform .15s}
+#pptxMount{
+  width:min(100%,1280px);height:min(72vh,720px);min-height:360px;
+  background:#fff;overflow:hidden;position:relative;margin:auto
+}
+.empty-stage{
+  position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;
+  color:#ddd;font-family:system-ui,sans-serif;pointer-events:none
+}
+.empty-stage strong{display:block;color:#fff;font-size:1.2rem;margin-bottom:7px}
+
+.controls{
+  background:#111;color:#fff;padding:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap
+}
+.ctrl{
+  min-width:42px;min-height:38px;border:1px solid #4a4a4a;background:#222;color:#fff;
+  cursor:pointer;padding:6px 9px
+}
+.ctrl:hover{background:#333}
+.ctrl[disabled]{opacity:.4;cursor:not-allowed}
+.slide-counter{min-width:78px;text-align:center;font:700 .82rem/1.1 system-ui,sans-serif}
+.controls .spacer{flex:1}
+.speed-wrap{display:flex;align-items:center;gap:5px;font:600 .75rem/1 system-ui,sans-serif}
+.speed-wrap select{background:#222;color:#fff;border:1px solid #4a4a4a;padding:7px}
+
+.zoom-readout{font:700 .75rem/1 system-ui,sans-serif;min-width:44px;text-align:center}
+.url-panel{
+  display:none;margin:8px 0;padding:10px;border:1px solid var(--vd-rule);background:#fff
+}
+.url-panel.open{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px}
+.url-panel input{width:100%;padding:9px;border:1px solid #aaa}
+.url-panel button{padding:8px 12px;border:1px solid var(--vd-crimson);background:var(--vd-crimson);color:#fff}
+
+.lower-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px
+}
+.panel{background:#fff;border:1px solid var(--vd-rule)}
+.panel-title{
+  margin:0;padding:9px 11px;background:var(--vd-cream2);color:var(--vd-crimson);
+  font-size:.92rem;border-bottom:1px solid var(--vd-rule)
+}
+
+/* Exact Videha fold / खोलू triangle logic */
+details{margin:0}
+details > summary{
+  list-style:none;display:flex;align-items:center;gap:9px;cursor:pointer;
+  padding:10px 11px;background:var(--vd-cream);border-bottom:1px solid var(--vd-rule);
+  user-select:none
+}
+summary::-webkit-details-marker{display:none}
+.vd-fold-triangle{
+  margin-left:auto;color:var(--vd-gold);font-size:1rem;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:transform .2s ease;flex-shrink:0;pointer-events:none
+}
+details[open] > summary .vd-fold-triangle{transform:rotate(180deg)}
+.vd-fold-label{
+  margin-left:.2rem;color:var(--vd-gold);font-size:.82rem;font-weight:700;
+  white-space:nowrap;line-height:1;display:inline-flex;align-items:center
+}
+.fold-title{font-weight:800;color:var(--vd-crimson)}
+.fold-sub{font-size:.75rem;color:var(--vd-ink-soft);margin-left:2px}
+.library-items{padding:7px;display:grid;gap:6px}
+.library-item{
+  border:1px solid var(--vd-rule);padding:8px;background:#fff;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center
+}
+.lib-name{font-weight:700;font-size:.86rem}
+.lib-meta{color:var(--vd-ink-soft);font-size:.73rem;margin-top:2px}
+.badge{
+  display:inline-block;margin-left:5px;border:1px solid var(--vd-gold);color:var(--vd-crimson);
+  padding:1px 5px;font:700 .62rem/1.2 system-ui,sans-serif
+}
+.lib-actions{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.small-btn,.small-link{
+  border:1px solid var(--vd-crimson);background:#fff;color:var(--vd-crimson);
+  padding:6px 8px;cursor:pointer;text-decoration:none;font-size:.75rem;font-weight:700
+}
+.small-btn.play{background:var(--vd-crimson);color:#fff}
+.help{padding:10px 12px;color:var(--vd-ink-soft);font-size:.82rem;line-height:1.55}
+.help strong{color:var(--vd-ink)}
+.privacy{
+  padding:8px 10px;background:#f7fbf8;border-top:1px solid #cfded4;
+  color:#315641;font-size:.78rem
+}
+.footer{
+  margin:12px 0 0;padding:10px;text-align:center;color:var(--vd-ink-soft);
+  font-size:.75rem;border-top:1px solid var(--vd-rule)
+}
+.footer a{color:var(--vd-crimson)}
+
+.toast{
+  position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(20px);
+  opacity:0;pointer-events:none;background:#111;color:#fff;padding:9px 12px;z-index:9999;
+  font:600 .8rem/1.35 system-ui,sans-serif;transition:.2s;max-width:min(90vw,640px)
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:920px){
+  .workspace{grid-template-columns:140px minmax(0,1fr)}
+  #pptxMount{height:min(68vh,640px);min-height:320px}
+  .lower-grid{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .app{padding:7px}
+  .masthead{align-items:flex-start;padding:10px}
+  .mh-flag-svg{width:42px}
+  .net-pill{display:none}
+  .top-actions{grid-template-columns:1fr}
+  .workspace{grid-template-columns:1fr}
+  .thumb-panel{display:none}
+  #pptxMount{height:58vh;min-height:260px}
+  .stage-shell{min-height:220px;padding:6px}
+  .controls{gap:4px}
+  .ctrl{min-width:40px}
+  .lower-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">मुख्य सामग्रीपर जाउ · Skip to main content</a>
+
+<div class="app">
+<header class="masthead">
+  <div class="mh-flags" aria-label="India and Nepal">
+    <svg class="mh-flag-svg mh-flag-india" viewBox="0 0 900 600" role="img" aria-label="India flag" xmlns="http://www.w3.org/2000/svg">
+      <rect width="900" height="600" fill="#fff"/>
+      <rect width="900" height="200" fill="#FF9933"/>
+      <rect y="400" width="900" height="200" fill="#138808"/>
+      <circle cx="450" cy="300" r="72" fill="none" stroke="#000080" stroke-width="12"/>
+      <circle cx="450" cy="300" r="10" fill="#000080"/>
+      <g stroke="#000080" stroke-width="5">
+        <line x1="450" y1="228" x2="450" y2="372"/><line x1="378" y1="300" x2="522" y2="300"/>
+        <line x1="399" y1="249" x2="501" y2="351"/><line x1="501" y1="249" x2="399" y2="351"/>
+        <line x1="421" y1="235" x2="479" y2="365"/><line x1="479" y1="235" x2="421" y2="365"/>
+        <line x1="385" y1="271" x2="515" y2="329"/><line x1="515" y1="271" x2="385" y2="329"/>
+      </g>
+    </svg>
+    <svg class="mh-flag-svg mh-flag-nepal" viewBox="0 0 520 640" role="img" aria-label="Nepal flag" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 20 L40 610 L410 425 L160 425 L410 255 L160 255 L40 20 Z" fill="#003893"/>
+      <path d="M73 78 L73 548 L335 417 L128 417 L338 272 L128 272 L73 78 Z" fill="#DC143C"/>
+      <g fill="#fff">
+        <path d="M147 199 a48 48 0 1 0 78 0 a62 62 0 1 1 -78 0"/>
+        <circle cx="177" cy="357" r="43"/>
+        <g transform="translate(177 357)"><path d="M0-75 L12-38 L50-53 L29-19 L66 0 L29 19 L50 53 L12 38 L0 75 L-12 38 L-50 53 L-29 19 L-66 0 L-29-19 L-50-53 L-12-38 Z"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="mh-copy">
+    <div class="mh-kicker">VIDEHA · Browser Tool</div>
+    <h1 class="mh-title">VIDEHA PPT PLAYER · विदेह PPT प्लेयर</h1>
+    <div class="mh-sub">GitHub default PPTX · Local PPTX · Web URL · Archive.org workflow · Fullscreen</div>
+  </div>
+  <span id="netPill" class="net-pill" aria-live="polite">Checking connection…</span>
+</header>
+
+<main id="main">
+  <div class="top-actions" aria-label="Open presentation">
+    <button id="defaultBtn" class="action-card primary" type="button">▶ Default PPTX</button>
+
+    <label class="action-card file-button">
+      <span>📂 Open local PPT/PPTX</span>
+      <input id="fileInput" type="file" accept=".pptx,.ppt,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.ms-powerpoint">
+    </label>
+
+    <button id="urlToggle" class="action-card" type="button">🔗 Open PPTX URL</button>
+  </div>
+
+  <div id="urlPanel" class="url-panel">
+    <label class="sr-only" for="urlInput">PPTX URL</label>
+    <input id="urlInput" type="url" inputmode="url" placeholder="https://…/presentation.pptx" aria-label="PPTX web address">
+    <button id="urlLoadBtn" type="button">Open</button>
+  </div>
+
+  <div id="status" class="statusbar" role="status" aria-live="polite">
+    <span class="status-dot" aria-hidden="true"></span>
+    <span id="statusText">Player ready. Default PPTX will load automatically when available.</span>
+    <div id="progress" class="progress" hidden aria-label="Loading"><span id="progressBar"></span></div>
+  </div>
+
+  <div id="workspace" class="workspace">
+    <aside class="thumb-panel" aria-label="Slide thumbnails">
+      <div class="thumb-head">
+        <span>Slides</span>
+        <button id="hideThumbsSide" class="small-btn" type="button" title="Hide thumbnails">×</button>
+      </div>
+      <div id="thumbList" class="thumb-list"></div>
+    </aside>
+
+    <section class="player-card" aria-label="Presentation player">
+      <div id="stageShell" class="stage-shell">
+        <div id="stageScaler">
+          <div id="pptxMount" aria-live="polite"></div>
+        </div>
+        <div id="emptyStage" class="empty-stage">
+          <div><strong>VIDEHA PPT PLAYER</strong>Default PPTX, local PPTX, or a web PPTX URL can be opened here.</div>
+        </div>
+      </div>
+
+      <div class="controls" role="toolbar" aria-label="Presentation controls">
+        <button id="firstBtn" class="ctrl" type="button" title="First slide" aria-label="First slide">|◀</button>
+        <button id="prevBtn" class="ctrl" type="button" title="Previous slide" aria-label="Previous slide">◀</button>
+        <button id="playBtn" class="ctrl" type="button" title="Play slideshow" aria-label="Play slideshow">▶</button>
+        <button id="nextBtn" class="ctrl" type="button" title="Next slide" aria-label="Next slide">▶</button>
+        <button id="lastBtn" class="ctrl" type="button" title="Last slide" aria-label="Last slide">▶|</button>
+
+        <span id="slideCounter" class="slide-counter">0 / 0</span>
+
+        <div class="speed-wrap">
+          <label for="speedSelect">Auto</label>
+          <select id="speedSelect" aria-label="Autoplay interval">
+            <option value="3000">3s</option>
+            <option value="5000" selected>5s</option>
+            <option value="8000">8s</option>
+            <option value="10000">10s</option>
+            <option value="15000">15s</option>
+          </select>
+        </div>
+
+        <span class="spacer"></span>
+
+        <button id="thumbBtn" class="ctrl" type="button" title="Show/hide thumbnails" aria-label="Show or hide thumbnails">▦</button>
+        <button id="zoomOutBtn" class="ctrl" type="button" title="Zoom out" aria-label="Zoom out">−</button>
+        <span id="zoomReadout" class="zoom-readout">100%</span>
+        <button id="zoomInBtn" class="ctrl" type="button" title="Zoom in" aria-label="Zoom in">+</button>
+        <button id="fitBtn" class="ctrl" type="button" title="Fit slide" aria-label="Fit slide">Fit</button>
+        <button id="fullBtn" class="ctrl" type="button" title="Fullscreen" aria-label="Fullscreen">⛶</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="lower-grid">
+    <section class="panel" aria-labelledby="libraryTitle">
+      <h2 id="libraryTitle" class="panel-title">Presentation Library · PPT सङ्ग्रह</h2>
+      <div id="library"></div>
+      <div class="privacy">Local files stay in your browser. They are not uploaded to Videha, GitHub, or another server by this player.</div>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">Open another presentation · दोसर PPT खोलू</h2>
+      <details>
+        <summary>
+          <span class="fold-title">📂 Local PPT/PPTX</span>
+          <span class="fold-sub">computer / phone</span>
+          <span aria-hidden="true" class="vd-fold-triangle">▾</span>
+          <span class="vd-fold-label">खोलू</span>
+        </summary>
+        <div class="help">
+          <strong>PPTX:</strong> choose a file using the local button above. The file is read inside the browser.<br>
+          <strong>Legacy .ppt:</strong> the browser renderer cannot reliably parse the old binary format; convert it to .pptx first.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="fold-title">🔗 Web / GitHub PPTX</span>
+          <span class="fold-sub">direct URL</span>
+          <span aria-hidden="true" class="vd-fold-triangle">▾</span>
+          <span class="vd-fold-label">खोलू</span>
+        </summary>
+        <div class="help">
+          Paste a direct <code>.pptx</code> URL. Same-origin GitHub Pages files work best. A remote host must allow browser cross-origin access for direct playback.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="fold-title">⬇ Archive.org / &gt;100 MB</span>
+          <span class="fold-sub">download → local open</span>
+          <span aria-hidden="true" class="vd-fold-triangle">▾</span>
+          <span class="vd-fold-label">खोलू</span>
+        </summary>
+        <div class="help">
+          For very large PPTX files, keep the file on Archive.org, provide its download link in <code>presentations.js</code>, let the reader download it, then use <strong>Open local PPT/PPTX</strong>. A direct-play button can also be used when Archive.org permits the browser request.
+        </div>
+      </details>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  © Gajendra Thakur, Editor — Videha First Maithili Fortnightly eJournal · ISSN 2229-547X ·
+  <a href="https://www.videha.co.in/" target="_blank" rel="noopener">www.videha.co.in</a> ·
+  <a href="./videha-css-documentary/">Videha CSS Documentary</a>
+</footer>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script type="module">
+import {
+  PptxViewer,
+  RECOMMENDED_ZIP_LIMITS
+} from "https://cdn.jsdelivr.net/npm/@aiden0z/pptx-renderer@1.2.4/dist/aiden0z-pptx-renderer.browser.es.js";
+
+const CONFIG = window.VIDEHA_PPT_CONFIG || {};
+const CACHE_NAME = "videha-ppt-player-pptx-" + (CONFIG.cacheVersion || "2");
+const RAW_DEFAULT_FALLBACK =
+  "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/presentations/default.pptx";
+
+const el = id => document.getElementById(id);
+const status = el("status");
+const statusText = el("statusText");
+const progress = el("progress");
+const progressBar = el("progressBar");
+const mount = el("pptxMount");
+const emptyStage = el("emptyStage");
+const workspace = el("workspace");
+const thumbList = el("thumbList");
+const slideCounter = el("slideCounter");
+const playBtn = el("playBtn");
+const zoomReadout = el("zoomReadout");
+const stageScaler = el("stageScaler");
+
+let viewer = null;
+let currentIndex = 0;
+let slideCount = 0;
+let autoplayTimer = null;
+let zoom = 1;
+let currentTitle = "";
+let loadToken = 0;
+let thumbObserver = null;
+let thumbHandles = [];
+
+function setStatus(message, kind="") {
+  status.classList.toggle("ok", kind === "ok");
+  status.classList.toggle("err", kind === "err");
+  statusText.textContent = message;
+}
+function showProgress(pct=null) {
+  progress.hidden = false;
+  progressBar.style.width = pct == null ? "35%" : Math.max(0,Math.min(100,pct)) + "%";
+}
+function hideProgress() {
+  progress.hidden = true;
+  progressBar.style.width = "0";
+}
+function toast(message) {
+  const t = el("toast");
+  t.textContent = message;
+  t.classList.add("show");
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove("show"), 2600);
+}
+function updateNetwork() {
+  const n = el("netPill");
+  const online = navigator.onLine;
+  n.textContent = online ? "● Online" : "● Offline";
+  n.className = "net-pill " + (online ? "online" : "offline");
+}
+addEventListener("online", updateNetwork);
+addEventListener("offline", updateNetwork);
+updateNetwork();
+
+function disposeThumbs() {
+  if (thumbObserver) {
+    try { thumbObserver.disconnect(); } catch (_) {}
+    thumbObserver = null;
+  }
+  for (const h of thumbHandles) {
+    try { h?.dispose?.(); } catch (_) {}
+  }
+  thumbHandles = [];
+}
+
+function createThumbs(count) {
+  disposeThumbs();
+  thumbList.innerHTML = "";
+  const frag = document.createDocumentFragment();
+
+  for (let i=0;i<count;i++) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "thumb";
+    b.dataset.index = i;
+    b.setAttribute("aria-label", `Go to slide ${i+1}`);
+    b.innerHTML = `<span class="thumb-placeholder">${i+1}</span><span class="thumb-number">${i+1}</span>`;
+    b.addEventListener("click", () => showSlide(i));
+    frag.appendChild(b);
+  }
+  thumbList.appendChild(frag);
+
+  // Render only thumbnails that become visible. This scales to large decks.
+  if ("IntersectionObserver" in window && viewer?.renderThumbnailToContainer) {
+    thumbObserver = new IntersectionObserver(async entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const button = entry.target;
+        thumbObserver.unobserve(button);
+        const index = Number(button.dataset.index);
+        try {
+          const ph = button.querySelector(".thumb-placeholder");
+          if (ph) ph.remove();
+
+          const host = document.createElement("span");
+          host.style.cssText = "position:absolute;inset:0;overflow:hidden;display:block;background:#fff";
+          button.insertBefore(host, button.firstChild);
+
+          const handle = viewer.renderThumbnailToContainer(index, host, {width: Math.max(120, button.clientWidth || 160)});
+          if (handle) {
+            thumbHandles[index] = handle;
+            await handle.ready;
+          }
+        } catch (err) {
+          console.warn("Thumbnail failed", index, err);
+        }
+      }
+    }, {root: el("thumbList"), rootMargin:"250px 0px"});
+    thumbList.querySelectorAll(".thumb").forEach(b => thumbObserver.observe(b));
+  }
+}
+
+function updateThumbActive() {
+  thumbList.querySelectorAll(".thumb").forEach((b,i) => {
+    b.classList.toggle("active", i === currentIndex);
+  });
+  const active = thumbList.querySelector(`.thumb[data-index="${currentIndex}"]`);
+  if (active) active.scrollIntoView({block:"nearest",behavior:"smooth"});
+}
+
+function updateControls() {
+  slideCounter.textContent = `${slideCount ? currentIndex+1 : 0} / ${slideCount}`;
+  const disabled = slideCount === 0;
+  el("firstBtn").disabled = disabled || currentIndex === 0;
+  el("prevBtn").disabled = disabled || currentIndex === 0;
+  el("nextBtn").disabled = disabled || currentIndex >= slideCount-1;
+  el("lastBtn").disabled = disabled || currentIndex >= slideCount-1;
+  playBtn.disabled = disabled || slideCount < 2;
+  zoomReadout.textContent = Math.round(zoom*100) + "%";
+}
+
+function applyZoom() {
+  stageScaler.style.transformOrigin = "top center";
+  stageScaler.style.transform = `scale(${zoom})`;
+  stageScaler.style.marginBottom = `${Math.max(0,(zoom-1) * 150)}px`;
+  updateControls();
+}
+function setZoom(v) {
+  zoom = Math.max(.35, Math.min(2.5, v));
+  applyZoom();
+}
+function fitSlide() {
+  zoom = 1;
+  applyZoom();
+  if (viewer?.setFitMode) viewer.setFitMode("contain").catch?.(()=>{});
+}
+
+function stopAutoplay() {
+  if (autoplayTimer) clearInterval(autoplayTimer);
+  autoplayTimer = null;
+  playBtn.textContent = "▶";
+  playBtn.setAttribute("aria-label","Play slideshow");
+  playBtn.title = "Play slideshow";
+}
+function startAutoplay() {
+  if (!slideCount || slideCount < 2) return;
+  stopAutoplay();
+  playBtn.textContent = "❚❚";
+  playBtn.setAttribute("aria-label","Pause slideshow");
+  playBtn.title = "Pause slideshow";
+  const ms = Number(el("speedSelect").value) || 5000;
+  autoplayTimer = setInterval(() => {
+    if (currentIndex >= slideCount-1) showSlide(0);
+    else showSlide(currentIndex+1);
+  }, ms);
+}
+function toggleAutoplay() {
+  autoplayTimer ? stopAutoplay() : startAutoplay();
+}
+
+async function destroyViewer() {
+  disposeThumbs();
+  if (viewer) {
+    try { viewer.destroy(); } catch (_) {}
+    viewer = null;
+  }
+  mount.innerHTML = "";
+}
+
+async function loadBuffer(buffer, title="Presentation") {
+  const myToken = ++loadToken;
+  stopAutoplay();
+  setStatus(`Rendering ${title}…`);
+  showProgress(70);
+  currentTitle = title;
+  emptyStage.hidden = true;
+
+  try {
+    await destroyViewer();
+    if (myToken !== loadToken) return false;
+
+    viewer = await PptxViewer.open(buffer, mount, {
+      renderMode: "slide",
+      fitMode: "contain",
+      zipLimits: RECOMMENDED_ZIP_LIMITS,
+      lazySlides: true,
+      lazyMedia: true,
+      pdfjs: false
+    });
+
+    if (myToken !== loadToken) {
+      try { viewer.destroy(); } catch (_) {}
+      return false;
+    }
+
+    slideCount = Number(viewer.slideCount) || 0;
+    if (!slideCount) throw new Error("No slides were detected in this PPTX.");
+
+    currentIndex = Number(viewer.currentSlideIndex) || 0;
+    createThumbs(slideCount);
+    updateThumbActive();
+    updateControls();
+    fitSlide();
+    hideProgress();
+    setStatus(`${title} — ${slideCount} slide${slideCount === 1 ? "" : "s"} loaded.`, "ok");
+    return true;
+  } catch (err) {
+    console.error(err);
+    slideCount = 0;
+    currentIndex = 0;
+    await destroyViewer();
+    emptyStage.hidden = false;
+    hideProgress();
+    updateControls();
+    setStatus(`PPTX was fetched, but could not be rendered: ${err?.message || err}`, "err");
+    return false;
+  }
+}
+
+async function showSlide(index) {
+  if (!viewer || !slideCount) return;
+  index = Math.max(0, Math.min(slideCount-1, Number(index)||0));
+  try {
+    await viewer.renderSlide(index);
+    currentIndex = index;
+    updateThumbActive();
+    updateControls();
+  } catch (err) {
+    console.error(err);
+    setStatus(`Slide ${index+1} could not be rendered: ${err?.message || err}`, "err");
+  }
+}
+
+async function fetchWithProgress(url) {
+  const bust = url.includes("?") ? "&" : "?";
+  const requestUrl = url.startsWith("./") ? `${url}${bust}v=${encodeURIComponent(CONFIG.cacheVersion || "2")}` : url;
+
+  const response = await fetch(requestUrl, {cache:"no-store"});
+  if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+
+  const total = Number(response.headers.get("content-length")) || 0;
+  if (!response.body || !total) {
+    showProgress(null);
+    return await response.arrayBuffer();
+  }
+
+  const reader = response.body.getReader();
+  let loaded = 0;
+  const chunks = [];
+  while (true) {
+    const {done, value} = await reader.read();
+    if (done) break;
+    chunks.push(value);
+    loaded += value.byteLength;
+    showProgress((loaded/total)*65);
+  }
+  const out = new Uint8Array(loaded);
+  let offset = 0;
+  for (const chunk of chunks) {
+    out.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return out.buffer;
+}
+
+async function cacheArrayBuffer(key, buffer) {
+  if (!("caches" in window)) return;
+  try {
+    const cache = await caches.open(CACHE_NAME);
+    await cache.put(key, new Response(buffer.slice(0), {
+      headers: {"Content-Type":"application/vnd.openxmlformats-officedocument.presentationml.presentation"}
+    }));
+  } catch (e) {
+    console.warn("PPTX cache unavailable", e);
+  }
+}
+async function cachedArrayBuffer(key) {
+  if (!("caches" in window)) return null;
+  try {
+    const cache = await caches.open(CACHE_NAME);
+    const hit = await cache.match(key);
+    return hit ? await hit.arrayBuffer() : null;
+  } catch (_) { return null; }
+}
+
+async function tryFetchCandidate(url, label) {
+  setStatus(`Fetching ${label}…`);
+  showProgress(6);
+  const buf = await fetchWithProgress(url);
+  await cacheArrayBuffer(url, buf);
+  return buf;
+}
+
+async function loadUrl(url, title=null, options={}) {
+  url = (url || "").trim();
+  if (!url) return false;
+
+  const name = title || decodeURIComponent(url.split("/").pop().split(/[?#]/)[0]) || "Web presentation";
+  const candidates = [url];
+
+  if (options.fallbackUrl && options.fallbackUrl !== url) {
+    candidates.push(options.fallbackUrl);
+  }
+
+  let lastError = null;
+  for (let i=0;i<candidates.length;i++) {
+    const candidate = candidates[i];
+    try {
+      const buffer = await tryFetchCandidate(candidate, i === 0 ? name : `${name} (GitHub raw fallback)`);
+      return await loadBuffer(buffer, name);
+    } catch (err) {
+      lastError = err;
+      console.warn("Fetch candidate failed:", candidate, err);
+    }
+  }
+
+  // Last resort: cached copy under either URL.
+  for (const candidate of candidates) {
+    const cached = await cachedArrayBuffer(candidate);
+    if (cached) {
+      setStatus(`Network fetch failed; opening cached ${name}…`);
+      return await loadBuffer(cached, `${name} (cached)`);
+    }
+  }
+
+  hideProgress();
+  setStatus(`Could not fetch ${name}: ${lastError?.message || "network error"}.`, "err");
+  return false;
+}
+
+async function loadDefault() {
+  const d = CONFIG.defaultPresentation;
+  if (!d || !d.url) {
+    setStatus("No default presentation is configured. Use local file or URL.", "err");
+    return;
+  }
+  await loadUrl(
+    d.url,
+    d.title || "Default presentation",
+    {fallbackUrl: d.fallbackUrl || RAW_DEFAULT_FALLBACK}
+  );
+}
+
+function openLocalFile(file) {
+  if (!file) return;
+  const lower = file.name.toLowerCase();
+
+  if (lower.endsWith(".ppt")) {
+    setStatus("Legacy .ppt is the older binary format. Convert it to .pptx, then open it here.", "err");
+    return;
+  }
+  if (!lower.endsWith(".pptx")) {
+    setStatus("Please choose a PowerPoint .pptx file.", "err");
+    return;
+  }
+
+  setStatus(`Reading ${file.name} from this device…`);
+  showProgress(10);
+
+  const reader = new FileReader();
+  reader.onprogress = e => {
+    if (e.lengthComputable) showProgress((e.loaded/e.total)*65);
+  };
+  reader.onerror = () => {
+    hideProgress();
+    setStatus("The local file could not be read.", "err");
+  };
+  reader.onload = () => loadBuffer(reader.result, file.name);
+  reader.readAsArrayBuffer(file);
+}
+
+function buildLibrary() {
+  const host = el("library");
+  host.innerHTML = "";
+  const cats = Array.isArray(CONFIG.categories) ? CONFIG.categories : [];
+
+  if (!cats.length) {
+    host.innerHTML = `<div class="help">No library categories yet. Add them in <code>presentations.js</code>.</div>`;
+    return;
+  }
+
+  for (const cat of cats) {
+    const det = document.createElement("details");
+    if (cat.open) det.open = true;
+
+    const sum = document.createElement("summary");
+    sum.innerHTML = `
+      <span class="fold-title"></span>
+      <span class="fold-sub"></span>
+      <span aria-hidden="true" class="vd-fold-triangle">▾</span>
+      <span class="vd-fold-label">खोलू</span>`;
+    sum.querySelector(".fold-title").textContent = cat.title || "Presentations";
+    sum.querySelector(".fold-sub").textContent = cat.subtitle || "";
+    det.appendChild(sum);
+
+    const list = document.createElement("div");
+    list.className = "library-items";
+    const items = Array.isArray(cat.items) ? cat.items : [];
+
+    if (!items.length) {
+      list.innerHTML = `<div class="help">एतय नव PPT जोड़ल जा सकैत अछि · Future PPTs can be added here.</div>`;
+    } else {
+      items.forEach(item => {
+        const row = document.createElement("div");
+        row.className = "library-item";
+
+        const copy = document.createElement("div");
+        copy.innerHTML = `<div class="lib-name"></div><div class="lib-meta"></div>`;
+        copy.querySelector(".lib-name").textContent = item.title || "Presentation";
+
+        if (item.badge) {
+          const b = document.createElement("span");
+          b.className = "badge";
+          b.textContent = item.badge;
+          copy.querySelector(".lib-name").appendChild(b);
+        }
+
+        copy.querySelector(".lib-meta").textContent =
+          item.downloadOnly ? "Download first → Open local PPTX" :
+          item.url ? "Direct browser presentation" : "Presentation";
+
+        const actions = document.createElement("div");
+        actions.className = "lib-actions";
+
+        if (item.url && !item.downloadOnly) {
+          const p = document.createElement("button");
+          p.type = "button";
+          p.className = "small-btn play";
+          p.textContent = "▶ Play";
+          p.addEventListener("click", () => loadUrl(item.url, item.title, {fallbackUrl:item.fallbackUrl}));
+          actions.appendChild(p);
+        }
+
+        const downloadUrl = item.downloadUrl || (item.downloadOnly ? item.url : null);
+        if (downloadUrl) {
+          const a = document.createElement("a");
+          a.className = "small-link";
+          a.href = downloadUrl;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = "⬇ Download";
+          actions.appendChild(a);
+
+          if (item.tryDirect !== false) {
+            const direct = document.createElement("button");
+            direct.type = "button";
+            direct.className = "small-btn";
+            direct.textContent = "Try direct";
+            direct.addEventListener("click", () => loadUrl(downloadUrl, item.title));
+            actions.appendChild(direct);
+          }
+        }
+
+        row.append(copy,actions);
+        list.appendChild(row);
+      });
+    }
+    det.appendChild(list);
+    host.appendChild(det);
+  }
+}
+
+el("fileInput").addEventListener("change", e => openLocalFile(e.target.files?.[0]));
+el("defaultBtn").addEventListener("click", loadDefault);
+el("urlToggle").addEventListener("click", () => {
+  el("urlPanel").classList.toggle("open");
+  if (el("urlPanel").classList.contains("open")) el("urlInput").focus();
+});
+el("urlLoadBtn").addEventListener("click", () => loadUrl(el("urlInput").value));
+el("urlInput").addEventListener("keydown", e => {
+  if (e.key === "Enter") loadUrl(el("urlInput").value);
+});
+
+el("firstBtn").addEventListener("click", () => showSlide(0));
+el("prevBtn").addEventListener("click", () => showSlide(currentIndex-1));
+el("nextBtn").addEventListener("click", () => showSlide(currentIndex+1));
+el("lastBtn").addEventListener("click", () => showSlide(slideCount-1));
+playBtn.addEventListener("click", toggleAutoplay);
+el("speedSelect").addEventListener("change", () => { if (autoplayTimer) startAutoplay(); });
+
+el("zoomOutBtn").addEventListener("click", () => setZoom(zoom-.1));
+el("zoomInBtn").addEventListener("click", () => setZoom(zoom+.1));
+el("fitBtn").addEventListener("click", fitSlide);
+
+el("thumbBtn").addEventListener("click", () => {
+  workspace.classList.toggle("thumbs-hidden");
+});
+el("hideThumbsSide").addEventListener("click", () => {
+  workspace.classList.add("thumbs-hidden");
+});
+
+el("fullBtn").addEventListener("click", async () => {
+  try {
+    if (!document.fullscreenElement) await el("stageShell").requestFullscreen();
+    else await document.exitFullscreen();
+  } catch (_) {
+    toast("Fullscreen is not available in this browser.");
+  }
+});
+
+document.addEventListener("keydown", e => {
+  const tag = document.activeElement?.tagName;
+  if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
+  if (!slideCount) return;
+
+  if (["ArrowRight","PageDown"].includes(e.key)) {
+    e.preventDefault(); showSlide(currentIndex+1);
+  } else if (["ArrowLeft","PageUp"].includes(e.key)) {
+    e.preventDefault(); showSlide(currentIndex-1);
+  } else if (e.key === "Home") {
+    e.preventDefault(); showSlide(0);
+  } else if (e.key === "End") {
+    e.preventDefault(); showSlide(slideCount-1);
+  } else if (e.key === " ") {
+    e.preventDefault(); toggleAutoplay();
+  } else if (e.key.toLowerCase() === "f") {
+    e.preventDefault(); el("fullBtn").click();
+  }
+});
+
+buildLibrary();
+updateControls();
+
+if (CONFIG.defaultPresentation?.autoLoad !== false && CONFIG.defaultPresentation?.url) {
+  loadDefault();
+}
+</script>
+</body>
+</html>
