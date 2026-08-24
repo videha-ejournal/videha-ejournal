@@ -3,7 +3,7 @@ window.VIDEHA_PPT_CONFIG = {
   cacheVersion: "2026-08-22-2",
 
   defaultPresentation: {
-    title: "Default Videha Presentation",
+    title: "Water-Burial Among the Crocodiles — English Teaching Course",
     url: "./presentations/default.pptx",
     fallbackUrl: "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/presentations/default.pptx",
     autoLoad: true
@@ -16,7 +16,7 @@ window.VIDEHA_PPT_CONFIG = {
       open: true,
       items: [
         {
-          title: "Default Videha Presentation",
+          title: "Water-Burial Among the Crocodiles — English Teaching Course",
           url: "./presentations/default.pptx",
           fallbackUrl: "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/presentations/default.pptx",
           badge: "DEFAULT"

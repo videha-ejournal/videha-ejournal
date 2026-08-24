@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#741c1c">
-<title>VIDEHA Digital Presentations · विदेह</title>
-<meta name="description" content="Videha CSS Documentary and browser-based PPTX player. First Maithili Fortnightly eJournal, ISSN 2229-547X.">
+<title>VIDEHA English Teaching Courses · विदेह</title>
+<meta name="description" content="Gohi Sabhak Beech Jalsamadhi English Teaching Course Documentary and Water-Burial Among the Crocodiles English Teaching Course PPT Player from Videha, ISSN 2229-547X.">
 <script>
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
   navigator.serviceWorker.register("./sw.js").catch(() => {});
@@ -39,6 +39,7 @@ a{color:inherit}
 .order{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700}
 .choice[aria-selected="true"] .order{background:var(--crimson)}
 .choice-copy{display:flex;flex-direction:column;gap:2px}
+.choice.has-badge .choice-copy{padding-right:70px}
 .choice-copy strong{font-size:clamp(.92rem,1.3vw,1.08rem)}
 .choice-copy small{color:var(--soft);font-size:.76rem}
 .badge{position:absolute;right:8px;top:6px;background:var(--gold);color:#28180a;border-radius:999px;padding:2px 7px;font:bold .62rem/1.4 Arial,sans-serif;letter-spacing:.06em}
@@ -73,26 +74,26 @@ a{color:inherit}
 
 <nav class="selector" aria-label="Featured Videha presentations">
   <div class="selector-inner" role="tablist" aria-label="Choose a viewer">
-    <button class="choice" id="documentaryChoice" type="button" role="tab" aria-selected="true" aria-controls="viewer" data-view="documentary">
+    <button class="choice has-badge" id="documentaryChoice" type="button" role="tab" aria-selected="true" aria-controls="viewer" data-view="documentary">
       <span class="order">1</span>
-      <span class="choice-copy"><strong>Videha CSS Documentary</strong><small>Gohi Sabhak Beech Jalsamadhi · 1,617 frames</small></span>
+      <span class="choice-copy"><strong>“Gohi Sabhak Beech Jalsamadhi” English Teaching Course Documentary</strong><small>VIDEHA · 1,617 frames</small></span>
       <span class="badge">DEFAULT</span>
     </button>
     <button class="choice" id="pptChoice" type="button" role="tab" aria-selected="false" aria-controls="viewer" data-view="ppt">
       <span class="order">2</span>
-      <span class="choice-copy"><strong>VIDEHA PPT Player</strong><small>Existing presentation retained · default.pptx</small></span>
+      <span class="choice-copy"><strong>“Water-Burial Among the Crocodiles” English Teaching Course PPT Player</strong><small>Existing presentation retained · default.pptx</small></span>
     </button>
     <a class="open-direct" id="openDirect" href="./videha-css-documentary/index.html">Open selected<br>full page ↗</a>
   </div>
 </nav>
 
 <div class="viewer-meta">
-  <span id="viewStatus" aria-live="polite">Now viewing: Videha CSS Documentary (default)</span>
+  <span id="viewStatus" aria-live="polite">Now viewing: “Gohi Sabhak Beech Jalsamadhi” English Teaching Course Documentary (default)</span>
   <span>Choose 1 or 2 above</span>
 </div>
 
 <main class="viewer-shell">
-  <iframe class="viewer" id="viewer" name="videhaViewer" src="./videha-css-documentary/index.html" title="Videha CSS Documentary" allow="fullscreen; autoplay" allowfullscreen></iframe>
+  <iframe class="viewer" id="viewer" name="videhaViewer" src="./videha-css-documentary/index.html" title="Gohi Sabhak Beech Jalsamadhi English Teaching Course Documentary" allow="fullscreen; autoplay" allowfullscreen></iframe>
 </main>
 
 <footer class="footer">
@@ -105,13 +106,13 @@ a{color:inherit}
   const views = {
     documentary: {
       url: "./videha-css-documentary/index.html",
-      title: "Videha CSS Documentary",
-      status: "Now viewing: Videha CSS Documentary (default)"
+      title: "“Gohi Sabhak Beech Jalsamadhi” English Teaching Course Documentary",
+      status: "Now viewing: “Gohi Sabhak Beech Jalsamadhi” English Teaching Course Documentary (default)"
     },
     ppt: {
       url: "./ppt-player.html",
-      title: "VIDEHA PPT Player — default.pptx",
-      status: "Now viewing: VIDEHA PPT Player · default.pptx"
+      title: "“Water-Burial Among the Crocodiles” English Teaching Course PPT Player — default.pptx",
+      status: "Now viewing: “Water-Burial Among the Crocodiles” English Teaching Course PPT Player · default.pptx"
     }
   };
   const frame = document.getElementById("viewer");
