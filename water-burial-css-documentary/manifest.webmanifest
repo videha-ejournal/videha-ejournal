@@ -1,0 +1,9 @@
+{
+  "name": "Videha CSS Documentary — Water-Burial Among the Crocodiles",
+  "short_name": "Videha Documentary",
+  "start_url": "./Videha_CSS_Documentary.html",
+  "display": "standalone",
+  "background_color": "#100a08",
+  "theme_color": "#4b0f0f",
+  "icons": []
+}

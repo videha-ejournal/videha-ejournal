@@ -31,7 +31,7 @@ a{color:inherit}
 .site-link{white-space:nowrap;text-decoration:none;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:7px 12px;font-size:.82rem}
 .site-link:hover,.site-link:focus-visible{background:#fff;color:var(--crimson)}
 .selector{background:var(--cream);border-bottom:1px solid var(--rule);padding:12px clamp(12px,3vw,36px)}
-.selector-inner{max-width:1500px;margin:auto;display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:stretch}
+.selector-inner{max-width:1500px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:10px;align-items:stretch}
 .choice{position:relative;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:11px;min-height:68px;padding:9px 14px;border:1px solid var(--rule);border-radius:10px;background:#fff;color:var(--ink);text-align:left;cursor:pointer;box-shadow:0 3px 12px rgba(47,31,20,.06);font:inherit}
 .choice:hover{border-color:var(--gold);transform:translateY(-1px)}
 .choice:focus-visible{outline:3px solid #236dc2;outline-offset:2px}
@@ -52,7 +52,7 @@ a{color:inherit}
 .footer a{color:#ffd28a}
 @media(max-width:760px){
   .masthead-inner{align-items:flex-start}.brand span{display:none}.site-link{font-size:.72rem}
-  .selector-inner{grid-template-columns:1fr 1fr}.open-direct{grid-column:1/-1;min-height:36px}
+  .selector-inner{grid-template-columns:1fr}.open-direct{grid-column:auto;min-height:36px}
   .choice{min-height:76px;padding:8px;grid-template-columns:30px 1fr;gap:7px}.order{width:30px;height:30px}.badge{font-size:.54rem}
   .choice-copy small{font-size:.66rem}.viewer{height:calc(100vh - 236px);min-height:430px}.viewer-shell{min-height:430px}
 }
@@ -83,13 +83,17 @@ a{color:inherit}
       <span class="order">2</span>
       <span class="choice-copy"><strong>“Water-Burial Among the Crocodiles” English Teaching Course PPT Player</strong><small>Existing presentation retained · default.pptx</small></span>
     </button>
+    <button class="choice" id="waterDocumentaryChoice" type="button" role="tab" aria-selected="false" aria-controls="viewer" data-view="waterDocumentary">
+      <span class="order">3</span>
+      <span class="choice-copy"><strong>“Water-Burial Among the Crocodiles” English Teaching Course Documentary</strong><small>VIDEHA · 904 frames</small></span>
+    </button>
     <a class="open-direct" id="openDirect" href="./videha-css-documentary/index.html">Open selected<br>full page ↗</a>
   </div>
 </nav>
 
 <div class="viewer-meta">
   <span id="viewStatus" aria-live="polite">Now viewing: “Gohi Sabhak Beech Jalsamadhi” English Teaching Course Documentary (default)</span>
-  <span>Choose 1 or 2 above</span>
+  <span>Choose 1, 2 or 3 above</span>
 </div>
 
 <main class="viewer-shell">
@@ -113,6 +117,11 @@ a{color:inherit}
       url: "./ppt-player.html",
       title: "“Water-Burial Among the Crocodiles” English Teaching Course PPT Player — default.pptx",
       status: "Now viewing: “Water-Burial Among the Crocodiles” English Teaching Course PPT Player · default.pptx"
+    },
+    waterDocumentary: {
+      url: "./water-burial-css-documentary/Videha_CSS_Documentary.html",
+      title: "“Water-Burial Among the Crocodiles” English Teaching Course Documentary",
+      status: "Now viewing: “Water-Burial Among the Crocodiles” English Teaching Course Documentary · 904 frames"
     }
   };
   const frame = document.getElementById("viewer");
@@ -137,7 +146,7 @@ a{color:inherit}
 
   choices.forEach(button => button.addEventListener("click", () => selectView(button.dataset.view)));
   const requested = new URL(location.href).searchParams.get("view");
-  selectView(requested === "ppt" ? "ppt" : "documentary", false);
+  selectView(views[requested] ? requested : "documentary", false);
 })();
 </script>
 </body>

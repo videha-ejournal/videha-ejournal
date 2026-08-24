@@ -1,5 +1,5 @@
-const CACHE_NAME = "videha-presentation-hub-v7";
-const APP_SHELL = ["./","./index.html","./ppt-player.html","./presentations.js"];
+const CACHE_NAME = "videha-presentation-hub-v8";
+const APP_SHELL = ["./","./index.html","./ppt-player.html","./presentations.js","./water-burial-css-documentary/Videha_CSS_Documentary.html"];
 const RENDERER =
   "https://cdn.jsdelivr.net/npm/@aiden0z/pptx-renderer@1.2.4/dist/aiden0z-pptx-renderer.browser.es.js";
 
