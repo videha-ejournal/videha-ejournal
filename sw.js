@@ -1,4 +1,4 @@
-const CACHE_NAME = "videha-presentation-hub-v3";
+const CACHE_NAME = "videha-presentation-hub-v4";
 const APP_SHELL = ["./","./index.html","./ppt-player.html","./presentations.js"];
 const RENDERER =
   "https://cdn.jsdelivr.net/npm/@aiden0z/pptx-renderer@1.2.4/dist/aiden0z-pptx-renderer.browser.es.js";
