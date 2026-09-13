@@ -9,6 +9,7 @@ import urllib.parse
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else '.').resolve()
 OUT = Path(sys.argv[2] if len(sys.argv) > 2 else 'data/videha-pdf-catalog.json')
 METADATA_PATH = ROOT / 'data' / 'curated-pdf-metadata.json'
+SOURCE_PAIRS_PATH = ROOT / 'data' / 'source-pdf-pairs.json'
 BASE = 'https://videha-ejournal.github.io/videha-ejournal/'
 RAW = 'https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/'
 REPO = 'https://github.com/videha-ejournal/videha-ejournal'
@@ -18,6 +19,10 @@ if not METADATA_PATH.exists():
     raise SystemExit(f'Missing curated metadata file: {METADATA_PATH}')
 
 CURATED_METADATA = json.loads(METADATA_PATH.read_text(encoding='utf-8'))
+if SOURCE_PAIRS_PATH.exists():
+    source_pairs = json.loads(SOURCE_PAIRS_PATH.read_text(encoding='utf-8'))
+    for filename, metadata in source_pairs.items():
+        CURATED_METADATA[filename] = {**CURATED_METADATA.get(filename, {}), **metadata}
 
 
 def title_for(path):

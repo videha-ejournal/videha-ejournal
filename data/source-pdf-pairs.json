@@ -1,0 +1,62 @@
+{
+  "ENGLISH_MAITHILI_GRAMMAR_GHAZAL_HISTORY.pdf": {
+    "title": "Maithili Grammar & Ghazal History — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "originalAuthor": "Ashish Anchinhar",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of the original Maithili work by Ashish Anchinhar; exact repository source PDF verified.",
+    "translationOf": "MAITHILI_GAZALAK_VYAKARAN_O_ITIHAAS.pdf",
+    "translationOfTitle": "Maithili Gazalak Vyakaran o Itihaas — Maithili Original"
+  },
+  "MAITHILI_GAZALAK_VYAKARAN_O_ITIHAAS.pdf": {
+    "title": "Maithili Gazalak Vyakaran o Itihaas — Maithili Original",
+    "language": "Maithili",
+    "languageCode": "mai",
+    "author": "Ashish Anchinhar",
+    "translatedAs": "ENGLISH_MAITHILI_GRAMMAR_GHAZAL_HISTORY.pdf",
+    "translatedAsTitle": "Maithili Grammar & Ghazal History — English Translation"
+  },
+  "ENGLISH_MAITHILI_WEB_JOURNALISM.pdf": {
+    "title": "Maithili Web Journalism — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "originalAuthor": "Ashish Anchinhar",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of the original Maithili work by Ashish Anchinhar; exact repository source PDF verified.",
+    "translationOf": "MAITHILI_WEB_JOURNALISM.pdf",
+    "translationOfTitle": "Maithili Web Journalism — Maithili Original"
+  },
+  "MAITHILI_WEB_JOURNALISM.pdf": {
+    "title": "Maithili Web Journalism — Maithili Original",
+    "language": "Maithili",
+    "languageCode": "mai",
+    "author": "Ashish Anchinhar",
+    "translatedAs": "ENGLISH_MAITHILI_WEB_JOURNALISM.pdf",
+    "translatedAsTitle": "Maithili Web Journalism — English Translation"
+  },
+  "ENGLISH_MAULAIL_GACHHAK_PHOOL.pdf": {
+    "title": "Maulail Gachhak Phool — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "originalAuthor": "Jagdish Prasad Mandal",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of the original Maithili work by Jagdish Prasad Mandal; exact repository source PDF verified.",
+    "translationOf": "MAULAIL_GACHHAK_PHOOL.pdf",
+    "translationOfTitle": "Maulail Gachhak Phool — Maithili Original"
+  },
+  "MAULAIL_GACHHAK_PHOOL.pdf": {
+    "title": "Maulail Gachhak Phool — Maithili Original",
+    "language": "Maithili",
+    "languageCode": "mai",
+    "author": "Jagdish Prasad Mandal",
+    "translatedAs": "ENGLISH_MAULAIL_GACHHAK_PHOOL.pdf",
+    "translatedAsTitle": "Maulail Gachhak Phool — English Translation"
+  }
+}
