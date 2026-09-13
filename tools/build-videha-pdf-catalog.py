@@ -11,6 +11,7 @@ LARGE_WARNING=95*1024*1024
 GOHI_ORIGINAL='Gohi_Sabhak_Beech_Jalsamadhi.pdf'
 GOHI_FAMILY_ID='gohi-sabhak-beech-jalsamadhi'
 GOHI_FAMILY_TITLE='Gohi Sabhak Beech Jalsamadhi'
+TRANSLATOR='Gajendra Thakur'
 
 CURATED_METADATA={
     '37_CHILDREN_NOVELS.pdf':{
@@ -28,6 +29,87 @@ CURATED_METADATA={
         'editionNote':'Maithili original collection.',
         'translatedAs':'37_CHILDREN_NOVELS.pdf',
         'translatedAsTitle':'37 Children Novels — English Translation',
+    },
+    'ENGLISH_MAITHILI_GRAMMAR_GHAZAL_HISTORY.pdf':{
+        'title':'Maithili Grammar & Ghazal History — English Translation',
+        'language':'English',
+        'languageCode':'en',
+        'translator':TRANSLATOR,
+        'editionNote':'English translation by Gajendra Thakur; source-work linkage is not asserted until the corresponding source PDF is identified unambiguously.',
+    },
+    'ENGLISH_MAITHILI_WEB_JOURNALISM.pdf':{
+        'title':'Maithili Web Journalism — English Translation',
+        'language':'English',
+        'languageCode':'en',
+        'translator':TRANSLATOR,
+        'editionNote':'English translation by Gajendra Thakur; source-work linkage is not asserted until the corresponding source PDF is identified unambiguously.',
+    },
+    'ENGLISH_PARVAT_OOPAR_BHAMRA_JE_SOOTAL.pdf':{
+        'title':'Parvat Oopar Bhamra Je Sootal — English Translation',
+        'language':'English',
+        'languageCode':'en',
+        'translator':TRANSLATOR,
+        'editionNote':'English translation by Gajendra Thakur. A similarly named Parvat PDF is present in the repository, but no translationOf relationship is asserted here without an unambiguous work-identity match.',
+    },
+    'ENGLISH_PREETI_KARAN_SETU_BANHAL.pdf':{
+        'title':'Preeti Karan Setu Banhal — English Translation',
+        'language':'English',
+        'languageCode':'en',
+        'translator':TRANSLATOR,
+        'editionNote':'English translation by Gajendra Thakur of the Maithili source work Preeti Karan Setu Banhal.',
+        'translationOf':'PREETI_KARAN_SETU_BANHAL.pdf',
+        'translationOfTitle':'Preeti Karan Setu Banhal — Maithili Original',
+    },
+    'PREETI_KARAN_SETU_BANHAL.pdf':{
+        'title':'Preeti Karan Setu Banhal — Maithili Original',
+        'language':'Maithili',
+        'languageCode':'mai',
+        'translatedAs':'ENGLISH_PREETI_KARAN_SETU_BANHAL.pdf',
+        'translatedAsTitle':'Preeti Karan Setu Banhal — English Translation',
+    },
+    'ENGLISH_SETUSHAM.pdf':{
+        'title':'Setusham — English Translation',
+        'language':'English',
+        'languageCode':'en',
+        'translator':TRANSLATOR,
+        'editionNote':'English translation by Gajendra Thakur of the Maithili source work Setusham.',
+        'translationOf':'SETUSHAM.pdf',
+        'translationOfTitle':'Setusham — Maithili Original',
+    },
+    'SETUSHAM.pdf':{
+        'title':'Setusham — Maithili Original',
+        'language':'Maithili',
+        'languageCode':'mai',
+        'translatedAs':'ENGLISH_SETUSHAM.pdf',
+        'translatedAsTitle':'Setusham — English Translation',
+    },
+    'ENGLISH_SAHASRABADHANI.pdf':{
+        'title':'Sahasrabadhani — English Translation',
+        'language':'English',
+        'languageCode':'en',
+        'translator':TRANSLATOR,
+        'editionNote':'English translation by Gajendra Thakur.',
+        'translationOf':'sahasrabadhani.pdf',
+        'translationOfTitle':'Sahasrabadhani — Source Work',
+    },
+    'sahasrabadhani.pdf':{
+        'title':'Sahasrabadhani — Source Work',
+        'translatedAs':'ENGLISH_SAHASRABADHANI.pdf',
+        'translatedAsTitle':'Sahasrabadhani — English Translation',
+    },
+    'ENGLISH_SAHASRASHIRSHA.pdf':{
+        'title':'Sahasrashirsha — English Translation',
+        'language':'English',
+        'languageCode':'en',
+        'translator':TRANSLATOR,
+        'editionNote':'English translation by Gajendra Thakur.',
+        'translationOf':'sahasrashirsha.pdf',
+        'translationOfTitle':'Sahasrashirsha — Source Work',
+    },
+    'sahasrashirsha.pdf':{
+        'title':'Sahasrashirsha — Source Work',
+        'translatedAs':'ENGLISH_SAHASRASHIRSHA.pdf',
+        'translatedAsTitle':'Sahasrashirsha — English Translation',
     },
     'GADYA_PADYA_BHARTI_1.pdf':{
         'title':'GADYA PADYA BHARTI 1',
