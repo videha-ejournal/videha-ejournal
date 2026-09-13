@@ -8,6 +8,9 @@ BASE='https://videha-ejournal.github.io/videha-ejournal/'
 RAW='https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/'
 REPO='https://github.com/videha-ejournal/videha-ejournal'
 LARGE_WARNING=95*1024*1024
+GOHI_ORIGINAL='Gohi_Sabhak_Beech_Jalsamadhi.pdf'
+GOHI_FAMILY_ID='gohi-sabhak-beech-jalsamadhi'
+GOHI_FAMILY_TITLE='Gohi Sabhak Beech Jalsamadhi'
 
 CURATED_METADATA={
     '37_CHILDREN_NOVELS.pdf':{
@@ -26,16 +29,86 @@ CURATED_METADATA={
         'translatedAs':'37_CHILDREN_NOVELS.pdf',
         'translatedAsTitle':'37 Children Novels — English Translation',
     },
+    'GADYA_PADYA_BHARTI_1.pdf':{
+        'title':'GADYA PADYA BHARTI 1',
+        'seriesTitle':'GADYA PADYA BHARTI',
+        'seriesPart':1,
+    },
+    'GAJENDRA_THAKUR_SAMAGRA_ANUVAD_KHAND.pdf':{
+        'title':'GADYA PADYA BHARTI 2 — Gajendra Thakur Samagra Anuvad Khand',
+        'alternateTitle':'GAJENDRA THAKUR SAMAGRA ANUVAD KHAND',
+        'seriesTitle':'GADYA PADYA BHARTI',
+        'seriesPart':2,
+        'editionNote':'Catalogued as GADYA PADYA BHARTI 2; repository filename retained unchanged.',
+    },
+    GOHI_ORIGINAL:{
+        'title':'Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel',
+        'language':'Maithili',
+        'languageCode':'mai',
+        'workFamilyId':GOHI_FAMILY_ID,
+        'workFamilyTitle':GOHI_FAMILY_TITLE,
+        'workFamilyRole':'principal-work',
+        'editionNote':'Principal Maithili novel; the largest Maithili novel in the Videha corpus. Source work for the Bal Sanskaran, Kishor Sanskaran, English translation, and teaching resources.',
+        'translatedAs':'Water_Burial_Among_the_Crocodiles.pdf',
+        'translatedAsTitle':'Water-Burial Among the Crocodiles — English Translation',
+        'relatedResources':[
+            {'path':'Gohi_Jalsamadhi_Bal_Sanskaran.pdf','title':'Gohi Jalsamadhi — Bal Sanskaran','relation':'bal-sanskaran'},
+            {'path':'Gohi_Jalsamadhi_Kishor_Sanskaran.pdf','title':'Gohi Jalsamadhi — Kishor Sanskaran','relation':'kishor-sanskaran'},
+            {'path':'Water_Burial_Among_the_Crocodiles.pdf','title':'Water-Burial Among the Crocodiles — English Translation','relation':'english-translation'},
+            {'path':'Videha_Teaching_Gohi_Jalsamadhi.pdf','title':'Videha Teaching: Gohi Jalsamadhi','relation':'teaching-resource'},
+            {'path':'Gohi_Jalsamadhi_Teaching_merge.pdf','title':'Gohi Jalsamadhi — Teaching Merge','relation':'teaching-resource'},
+        ],
+    },
     'Gohi_Jalsamadhi_Bal_Sanskaran.pdf':{
         'title':'Gohi Jalsamadhi — Bal Sanskaran',
         'language':'Maithili',
         'languageCode':'mai',
-        'editionNote':'Bal Sanskaran (children’s edition).',
+        'workFamilyId':GOHI_FAMILY_ID,
+        'workFamilyTitle':GOHI_FAMILY_TITLE,
+        'workFamilyRole':'bal-sanskaran',
+        'editionNote':'Bal Sanskaran (children’s adaptation) of Gohi Sabhak Beech Jalsamadhi.',
+        'isBasedOn':GOHI_ORIGINAL,
+        'isBasedOnTitle':'Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel',
     },
-    'Gohi_Sabhak_Beech_Jalsamadhi.pdf':{
-        'title':'Gohi Sabhak Beech Jalsamadhi',
+    'Gohi_Jalsamadhi_Kishor_Sanskaran.pdf':{
+        'title':'Gohi Jalsamadhi — Kishor Sanskaran',
         'language':'Maithili',
         'languageCode':'mai',
+        'workFamilyId':GOHI_FAMILY_ID,
+        'workFamilyTitle':GOHI_FAMILY_TITLE,
+        'workFamilyRole':'kishor-sanskaran',
+        'editionNote':'Kishor Sanskaran (adolescent edition) of Gohi Sabhak Beech Jalsamadhi.',
+        'isBasedOn':GOHI_ORIGINAL,
+        'isBasedOnTitle':'Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel',
+    },
+    'Water_Burial_Among_the_Crocodiles.pdf':{
+        'title':'Water-Burial Among the Crocodiles — English Translation',
+        'language':'English',
+        'languageCode':'en',
+        'workFamilyId':GOHI_FAMILY_ID,
+        'workFamilyTitle':GOHI_FAMILY_TITLE,
+        'workFamilyRole':'english-translation',
+        'editionNote':'English translation of the Maithili novel Gohi Sabhak Beech Jalsamadhi.',
+        'translationOf':GOHI_ORIGINAL,
+        'translationOfTitle':'Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel',
+    },
+    'Videha_Teaching_Gohi_Jalsamadhi.pdf':{
+        'title':'Videha Teaching: Gohi Jalsamadhi',
+        'workFamilyId':GOHI_FAMILY_ID,
+        'workFamilyTitle':GOHI_FAMILY_TITLE,
+        'workFamilyRole':'teaching-resource',
+        'editionNote':'Videha teaching resource based on Gohi Sabhak Beech Jalsamadhi.',
+        'isBasedOn':GOHI_ORIGINAL,
+        'isBasedOnTitle':'Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel',
+    },
+    'Gohi_Jalsamadhi_Teaching_merge.pdf':{
+        'title':'Gohi Jalsamadhi — Teaching Merge',
+        'workFamilyId':GOHI_FAMILY_ID,
+        'workFamilyTitle':GOHI_FAMILY_TITLE,
+        'workFamilyRole':'teaching-resource',
+        'editionNote':'Combined teaching resource based on Gohi Sabhak Beech Jalsamadhi.',
+        'isBasedOn':GOHI_ORIGINAL,
+        'isBasedOnTitle':'Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel',
     },
 }
 
@@ -75,7 +148,7 @@ for p in ROOT.rglob('*.pdf'):
     items.append(item)
 items.sort(key=lambda x:x['path'].lower())
 payload={
-    'schemaVersion':3,
+    'schemaVersion':4,
     'version':'2026-09-13',
     'repository':'videha-ejournal/videha-ejournal',
     'baseUrl':BASE,
