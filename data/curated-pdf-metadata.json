@@ -1,0 +1,255 @@
+{
+  "37_CHILDREN_NOVELS.pdf": {
+    "title": "37 Children Novels — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "editionNote": "English translation of the Maithili collection “37 Maithili Children Novels”.",
+    "translationOf": "GAJENDRA_THAKUR_SAMAGRA_37_MAITHILI_CHILDREN_NOVELS.pdf",
+    "translationOfTitle": "Gajendra Thakur Samagra: 37 Maithili Children Novels — Maithili Original"
+  },
+  "GAJENDRA_THAKUR_SAMAGRA_37_MAITHILI_CHILDREN_NOVELS.pdf": {
+    "title": "Gajendra Thakur Samagra: 37 Maithili Children Novels — Maithili Original",
+    "language": "Maithili",
+    "languageCode": "mai",
+    "editionNote": "Maithili original collection.",
+    "translatedAs": "37_CHILDREN_NOVELS.pdf",
+    "translatedAsTitle": "37 Children Novels — English Translation"
+  },
+  "ENGLISH_MAITHILI_GRAMMAR_GHAZAL_HISTORY.pdf": {
+    "title": "Maithili Grammar & Ghazal History — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "originalAuthor": "Ashish Anchinhar",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of the original Maithili work by Ashish Anchinhar; source-PDF linkage is not asserted until the corresponding Maithili PDF is identified unambiguously."
+  },
+  "ENGLISH_MAITHILI_WEB_JOURNALISM.pdf": {
+    "title": "Maithili Web Journalism — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "originalAuthor": "Ashish Anchinhar",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of the original Maithili work by Ashish Anchinhar; source-PDF linkage is not asserted until the corresponding Maithili PDF is identified unambiguously."
+  },
+  "ENGLISH_MAULAIL_GACHHAK_PHOOL.pdf": {
+    "title": "Maulail Gachhak Phool — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "originalAuthor": "Jagdish Prasad Mandal",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of the original Maithili work by Jagdish Prasad Mandal; source-PDF linkage is not asserted until the corresponding Maithili PDF is identified unambiguously."
+  },
+  "ENGLISH_PARVAT_OOPAR_BHAMRA_JE_SOOTAL.pdf": {
+    "title": "Parvat Oopar Bhamra Je Sootal — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "editionNote": "English translation by Gajendra Thakur. A similarly named Parvat PDF is present in the repository, but no translationOf relationship is asserted without an unambiguous work-identity match."
+  },
+  "ENGLISH_PREETI_KARAN_SETU_BANHAL.pdf": {
+    "title": "Preeti Karan Setu Banhal — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "originalEditor": "Ashish Anchinhar",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of the Maithili source work Preeti Karan Setu Banhal; the original Maithili edition was edited by Ashish Anchinhar.",
+    "translationOf": "PREETI_KARAN_SETU_BANHAL.pdf",
+    "translationOfTitle": "Preeti Karan Setu Banhal — Maithili Original"
+  },
+  "PREETI_KARAN_SETU_BANHAL.pdf": {
+    "title": "Preeti Karan Setu Banhal — Maithili Original",
+    "language": "Maithili",
+    "languageCode": "mai",
+    "editor": "Ashish Anchinhar",
+    "translatedAs": "ENGLISH_PREETI_KARAN_SETU_BANHAL.pdf",
+    "translatedAsTitle": "Preeti Karan Setu Banhal — English Translation"
+  },
+  "ENGLISH_SETUSHAM.pdf": {
+    "title": "Setusham — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "originalEditor": "Ashish Anchinhar",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of the Maithili source work Setusham; the original Maithili edition was edited by Ashish Anchinhar.",
+    "translationOf": "SETUSHAM.pdf",
+    "translationOfTitle": "Setusham — Maithili Original"
+  },
+  "SETUSHAM.pdf": {
+    "title": "Setusham — Maithili Original",
+    "language": "Maithili",
+    "languageCode": "mai",
+    "editor": "Ashish Anchinhar",
+    "translatedAs": "ENGLISH_SETUSHAM.pdf",
+    "translatedAsTitle": "Setusham — English Translation"
+  },
+  "ENGLISH_SAHASRABADHANI.pdf": {
+    "title": "Sahasrabadhani — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "editionNote": "English translation by Gajendra Thakur.",
+    "translationOf": "sahasrabadhani.pdf",
+    "translationOfTitle": "Sahasrabadhani — Source Work"
+  },
+  "sahasrabadhani.pdf": {
+    "title": "Sahasrabadhani — Source Work",
+    "translatedAs": "ENGLISH_SAHASRABADHANI.pdf",
+    "translatedAsTitle": "Sahasrabadhani — English Translation"
+  },
+  "ENGLISH_SAHASRASHIRSHA.pdf": {
+    "title": "Sahasrashirsha — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "translator": "Gajendra Thakur",
+    "editionNote": "English translation by Gajendra Thakur.",
+    "translationOf": "sahasrashirsha.pdf",
+    "translationOfTitle": "Sahasrashirsha — Source Work"
+  },
+  "sahasrashirsha.pdf": {
+    "title": "Sahasrashirsha — Source Work",
+    "translatedAs": "ENGLISH_SAHASRASHIRSHA.pdf",
+    "translatedAsTitle": "Sahasrashirsha — English Translation"
+  },
+  "ENGLISH_JPM_BIOGRAPHY.pdf": {
+    "title": "Jagdish Prasad Mandal — Biography — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "author": "Gajendra Thakur",
+    "originalAuthor": "Gajendra Thakur",
+    "translator": "Gajendra Thakur",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "subjectPersons": ["Jagdish Prasad Mandal"],
+    "editionNote": "English translation by Gajendra Thakur of his Maithili biography of Jagdish Prasad Mandal. In JPM filenames, JPM stands for Jagdish Prasad Mandal."
+  },
+  "ENGLISH_JPM_ECHOES_OF_EXISTENCE.pdf": {
+    "title": "Jagdish Prasad Mandal — Echoes of Existence — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "author": "Jagdish Prasad Mandal",
+    "originalAuthor": "Jagdish Prasad Mandal",
+    "translator": "Gajendra Thakur",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of a Maithili work by Jagdish Prasad Mandal. In JPM filenames, JPM stands for Jagdish Prasad Mandal."
+  },
+  "ENGLISH_JPM_JEEVAN_SANGHARSH.pdf": {
+    "title": "Jagdish Prasad Mandal — Jeevan Sangharsh — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "author": "Jagdish Prasad Mandal",
+    "originalAuthor": "Jagdish Prasad Mandal",
+    "translator": "Gajendra Thakur",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of a Maithili work by Jagdish Prasad Mandal. In JPM filenames, JPM stands for Jagdish Prasad Mandal."
+  },
+  "ENGLISH_JPM_LAHSAN.pdf": {
+    "title": "Jagdish Prasad Mandal — Lahsan — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "author": "Jagdish Prasad Mandal",
+    "originalAuthor": "Jagdish Prasad Mandal",
+    "translator": "Gajendra Thakur",
+    "originalLanguage": "Maithili",
+    "originalLanguageCode": "mai",
+    "editionNote": "English translation by Gajendra Thakur of a Maithili work by Jagdish Prasad Mandal. In JPM filenames, JPM stands for Jagdish Prasad Mandal."
+  },
+  "GT_PT_Criticism.pdf": {
+    "title": "Criticism on Gajendra Thakur & Preeti Thakur — Collection",
+    "documentType": "criticism-collection",
+    "subjectPersons": ["Gajendra Thakur", "Preeti Thakur"],
+    "contributorNote": "Collection of criticism on Gajendra Thakur and Preeti Thakur by different writers."
+  },
+  "GADYA_PADYA_BHARTI_1.pdf": {
+    "title": "GADYA PADYA BHARTI 1",
+    "seriesTitle": "GADYA PADYA BHARTI",
+    "seriesPart": 1
+  },
+  "GAJENDRA_THAKUR_SAMAGRA_ANUVAD_KHAND.pdf": {
+    "title": "GADYA PADYA BHARTI 2 — Gajendra Thakur Samagra Anuvad Khand",
+    "alternateTitle": "GAJENDRA THAKUR SAMAGRA ANUVAD KHAND",
+    "seriesTitle": "GADYA PADYA BHARTI",
+    "seriesPart": 2,
+    "editionNote": "Catalogued as GADYA PADYA BHARTI 2; repository filename retained unchanged."
+  },
+  "Gohi_Sabhak_Beech_Jalsamadhi.pdf": {
+    "title": "Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel",
+    "language": "Maithili",
+    "languageCode": "mai",
+    "workFamilyId": "gohi-sabhak-beech-jalsamadhi",
+    "workFamilyTitle": "Gohi Sabhak Beech Jalsamadhi",
+    "workFamilyRole": "principal-work",
+    "editionNote": "Principal Maithili novel; the largest Maithili novel in the Videha corpus. Source work for the Bal Sanskaran, Kishor Sanskaran, English translation, and teaching resources.",
+    "translatedAs": "Water_Burial_Among_the_Crocodiles.pdf",
+    "translatedAsTitle": "Water-Burial Among the Crocodiles — English Translation",
+    "relatedResources": [
+      {"path": "Gohi_Jalsamadhi_Bal_Sanskaran.pdf", "title": "Gohi Jalsamadhi — Bal Sanskaran", "relation": "bal-sanskaran"},
+      {"path": "Gohi_Jalsamadhi_Kishor_Sanskaran.pdf", "title": "Gohi Jalsamadhi — Kishor Sanskaran", "relation": "kishor-sanskaran"},
+      {"path": "Water_Burial_Among_the_Crocodiles.pdf", "title": "Water-Burial Among the Crocodiles — English Translation", "relation": "english-translation"},
+      {"path": "Videha_Teaching_Gohi_Jalsamadhi.pdf", "title": "Videha Teaching: Gohi Jalsamadhi", "relation": "teaching-resource"},
+      {"path": "Gohi_Jalsamadhi_Teaching_merge.pdf", "title": "Gohi Jalsamadhi — Teaching Merge", "relation": "teaching-resource"}
+    ]
+  },
+  "Gohi_Jalsamadhi_Bal_Sanskaran.pdf": {
+    "title": "Gohi Jalsamadhi — Bal Sanskaran",
+    "language": "Maithili",
+    "languageCode": "mai",
+    "workFamilyId": "gohi-sabhak-beech-jalsamadhi",
+    "workFamilyTitle": "Gohi Sabhak Beech Jalsamadhi",
+    "workFamilyRole": "bal-sanskaran",
+    "editionNote": "Bal Sanskaran (children’s adaptation) of Gohi Sabhak Beech Jalsamadhi.",
+    "isBasedOn": "Gohi_Sabhak_Beech_Jalsamadhi.pdf",
+    "isBasedOnTitle": "Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel"
+  },
+  "Gohi_Jalsamadhi_Kishor_Sanskaran.pdf": {
+    "title": "Gohi Jalsamadhi — Kishor Sanskaran",
+    "language": "Maithili",
+    "languageCode": "mai",
+    "workFamilyId": "gohi-sabhak-beech-jalsamadhi",
+    "workFamilyTitle": "Gohi Sabhak Beech Jalsamadhi",
+    "workFamilyRole": "kishor-sanskaran",
+    "editionNote": "Kishor Sanskaran (adolescent edition) of Gohi Sabhak Beech Jalsamadhi.",
+    "isBasedOn": "Gohi_Sabhak_Beech_Jalsamadhi.pdf",
+    "isBasedOnTitle": "Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel"
+  },
+  "Water_Burial_Among_the_Crocodiles.pdf": {
+    "title": "Water-Burial Among the Crocodiles — English Translation",
+    "language": "English",
+    "languageCode": "en",
+    "workFamilyId": "gohi-sabhak-beech-jalsamadhi",
+    "workFamilyTitle": "Gohi Sabhak Beech Jalsamadhi",
+    "workFamilyRole": "english-translation",
+    "editionNote": "English translation of the Maithili novel Gohi Sabhak Beech Jalsamadhi.",
+    "translationOf": "Gohi_Sabhak_Beech_Jalsamadhi.pdf",
+    "translationOfTitle": "Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel"
+  },
+  "Videha_Teaching_Gohi_Jalsamadhi.pdf": {
+    "title": "Videha Teaching: Gohi Jalsamadhi",
+    "workFamilyId": "gohi-sabhak-beech-jalsamadhi",
+    "workFamilyTitle": "Gohi Sabhak Beech Jalsamadhi",
+    "workFamilyRole": "teaching-resource",
+    "editionNote": "Videha teaching resource based on Gohi Sabhak Beech Jalsamadhi.",
+    "isBasedOn": "Gohi_Sabhak_Beech_Jalsamadhi.pdf",
+    "isBasedOnTitle": "Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel"
+  },
+  "Gohi_Jalsamadhi_Teaching_merge.pdf": {
+    "title": "Gohi Jalsamadhi — Teaching Merge",
+    "workFamilyId": "gohi-sabhak-beech-jalsamadhi",
+    "workFamilyTitle": "Gohi Sabhak Beech Jalsamadhi",
+    "workFamilyRole": "teaching-resource",
+    "editionNote": "Combined teaching resource based on Gohi Sabhak Beech Jalsamadhi.",
+    "isBasedOn": "Gohi_Sabhak_Beech_Jalsamadhi.pdf",
+    "isBasedOnTitle": "Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel"
+  }
+}
