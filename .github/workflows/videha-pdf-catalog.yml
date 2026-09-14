@@ -26,6 +26,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            tools/build-videha-pdf-catalog.py
+            tools/build-videha-federated-pdf-catalog.py
+          sparse-checkout-cone-mode: false
       - name: Syntax-check catalogue builders
         run: python3 -m py_compile tools/build-videha-pdf-catalog.py tools/build-videha-federated-pdf-catalog.py
   build-catalogues:
