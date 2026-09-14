@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T10:15:27.928628Z",
+  "generatedAt": "2026-09-14T17:24:04.527141Z",
   "owner": "videha-ejournal",
   "reviewCount": 10,
   "instructions": "Machine-verifiable fields are automatic. Edit data/federated-pdf-metadata.json only where scholarly metadata needs an editorial decision.",
@@ -91,8 +91,8 @@
       "repository": "videha-ejournal/videha-ejournal.github.io",
       "path": "Videha_Maithili_English_Thesaurus_Part_05_of_05.pdf",
       "suggestedTitle": "Videha Maithili English Thesaurus Part 05 of 05",
-      "sha256": null,
-      "hashStatus": "pending-budget",
+      "sha256": "3574b4f9cc2a02ff404916b89e210dd365deab1e6d003da57b24513378661c07",
+      "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     }
   ]
