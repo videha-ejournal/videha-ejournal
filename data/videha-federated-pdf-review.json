@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-15T04:11:31.163170Z",
+  "generatedAt": "2026-09-15T04:13:14.891609Z",
   "owner": "videha-ejournal",
   "reviewCount": 10,
   "instructions": "Machine-verifiable fields are automatic. Edit data/federated-pdf-metadata.json only where scholarly metadata needs an editorial decision.",
@@ -37,8 +37,8 @@
       "repository": "videha-ejournal/videha-ejournal.github.io",
       "path": "Videha_English_Maithili_Thesaurus_Part_04_of_05.pdf",
       "suggestedTitle": "Videha English Maithili Thesaurus Part 04 of 05",
-      "sha256": null,
-      "hashStatus": "pending-budget",
+      "sha256": "d5a98a3e1013f8dfda492a48e11ca6c0397ad1ccc3415790681d684f5ee0eafd",
+      "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     },
     {
@@ -55,8 +55,8 @@
       "repository": "videha-ejournal/videha-ejournal.github.io",
       "path": "Videha_Maithili_English_Thesaurus_Part_01_of_05.pdf",
       "suggestedTitle": "Videha Maithili English Thesaurus Part 01 of 05",
-      "sha256": null,
-      "hashStatus": "pending-budget",
+      "sha256": "05b7bd0d647923d6d31f23f60c7f2755ae2b7d1ed33d33416664954e88ff9ecc",
+      "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     },
     {
@@ -64,8 +64,8 @@
       "repository": "videha-ejournal/videha-ejournal.github.io",
       "path": "Videha_Maithili_English_Thesaurus_Part_02_of_05.pdf",
       "suggestedTitle": "Videha Maithili English Thesaurus Part 02 of 05",
-      "sha256": null,
-      "hashStatus": "pending-budget",
+      "sha256": "9cbb43e40510758678476fa595454b27e1812368d5436c660257c4e74b232756",
+      "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     },
     {
@@ -73,8 +73,8 @@
       "repository": "videha-ejournal/videha-ejournal.github.io",
       "path": "Videha_Maithili_English_Thesaurus_Part_03_of_05.pdf",
       "suggestedTitle": "Videha Maithili English Thesaurus Part 03 of 05",
-      "sha256": null,
-      "hashStatus": "pending-budget",
+      "sha256": "ec915fe5473ba1bae1b7150f83a3795bb675984a59199d55daad99fdacbb7572",
+      "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     },
     {
@@ -82,8 +82,8 @@
       "repository": "videha-ejournal/videha-ejournal.github.io",
       "path": "Videha_Maithili_English_Thesaurus_Part_04_of_05.pdf",
       "suggestedTitle": "Videha Maithili English Thesaurus Part 04 of 05",
-      "sha256": null,
-      "hashStatus": "pending-budget",
+      "sha256": "4b0c59b60e3a63cbe459ad3321f1a4f08739583c8a76495e0990e639ba952753",
+      "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     },
     {
