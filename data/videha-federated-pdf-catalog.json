@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-19T07:10:02.920480Z",
+  "generatedAt": "2026-09-20T18:11:47.270390Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 905,
-  "verifiedHashCount": 905,
+  "itemCount": 907,
+  "verifiedHashCount": 907,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -1371,6 +1371,24 @@
       "sha256": "f77eb6c74a1ea90b317ad228558fa009744c19aff0ef391f2c95137a9535824d",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-19T07:10:02.920480Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Katha_Shattrayi_Khand_1.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Katha_Shattrayi_Khand_1.pdf",
+      "name": "Katha_Shattrayi_Khand_1.pdf",
+      "title": "Katha Shattrayi Khand 1",
+      "mediaType": "application/pdf",
+      "bytes": 5604856,
+      "gitBlobSha": "d301de24a7682ee821659d3401d1ed4d9f528340",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Katha_Shattrayi_Khand_1.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Katha_Shattrayi_Khand_1.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Katha_Shattrayi_Khand_1.pdf",
+      "sha256": "b0edd70f7c6d61b7c381b0ca73a7232646813e341ad8fa8d549171ef0f4ca0a6",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-09-20T18:11:47.270390Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
@@ -16516,6 +16534,24 @@
       "sha256": "5ae200aedd9829d999360d51f794ecd9589163509c5da5c1553a2b91d9c12d0e",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-14T10:15:27.928628Z",
+      "metadataStatus": "machine-complete"
+    },
+    {
+      "key": "videha-ejournal/videha-sadeha:Videha 449.pdf",
+      "repository": "videha-ejournal/videha-sadeha",
+      "branch": "main",
+      "path": "Videha 449.pdf",
+      "name": "Videha 449.pdf",
+      "title": "Videha 449",
+      "mediaType": "application/pdf",
+      "bytes": 8271929,
+      "gitBlobSha": "7450443aba54f8674f011d0eb7fae96de5ea3e24",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-sadeha/Videha%20449.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-sadeha/main/Videha%20449.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-sadeha/blob/main/Videha%20449.pdf",
+      "sha256": "605109a85eb05127e05722389c2c2c23978ec0f659600958d4c159a669f52b13",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-09-20T18:11:47.270390Z",
       "metadataStatus": "machine-complete"
     }
   ]
