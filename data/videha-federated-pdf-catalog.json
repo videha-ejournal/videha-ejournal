@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-25T16:50:11.093538Z",
+  "generatedAt": "2026-09-25T16:54:16.375914Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 910,
-  "verifiedHashCount": 910,
+  "itemCount": 911,
+  "verifiedHashCount": 911,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -1815,6 +1815,24 @@
       "translatedAs": "ENGLISH_SETUSHAM.pdf",
       "translatedAsTitle": "Setusham — English Translation",
       "metadataStatus": "catalogued-scholarly-metadata"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Smritik_Dosar_Dis.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Smritik_Dosar_Dis.pdf",
+      "name": "Smritik_Dosar_Dis.pdf",
+      "title": "Smritik Dosar Dis",
+      "mediaType": "application/pdf",
+      "bytes": 8685529,
+      "gitBlobSha": "2e3d3aa5eac051191e919cb915ddb880a6da5202",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Smritik_Dosar_Dis.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Smritik_Dosar_Dis.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Smritik_Dosar_Dis.pdf",
+      "sha256": "61115de390541a53b3a0991e0431c17e2bbf4aebc4258821bc83ee9390b61097",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-09-25T16:54:16.375914Z",
+      "metadataStatus": "legacy-catalogued"
     },
     {
       "key": "videha-ejournal/videha-ejournal:Swapn_me_mijjhar_Hoit.pdf",
