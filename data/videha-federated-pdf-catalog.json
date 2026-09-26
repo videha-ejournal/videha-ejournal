@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-25T16:54:16.375914Z",
+  "generatedAt": "2026-09-26T19:22:12.850887Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 911,
-  "verifiedHashCount": 911,
+  "itemCount": 912,
+  "verifiedHashCount": 912,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -1389,6 +1389,24 @@
       "sha256": "b0edd70f7c6d61b7c381b0ca73a7232646813e341ad8fa8d549171ef0f4ca0a6",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-20T18:11:47.270390Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Katha_Shattrayi_Khand_2.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Katha_Shattrayi_Khand_2.pdf",
+      "name": "Katha_Shattrayi_Khand_2.pdf",
+      "title": "Katha Shattrayi Khand 2",
+      "mediaType": "application/pdf",
+      "bytes": 5583141,
+      "gitBlobSha": "27810c101a3a6eeee969055d8f571acf419edcaf",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Katha_Shattrayi_Khand_2.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Katha_Shattrayi_Khand_2.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Katha_Shattrayi_Khand_2.pdf",
+      "sha256": "56d21977b6070f04d4eb8bb302554015b7e535e70ba4c4d122ade924b995a054",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-09-26T19:22:12.850887Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
