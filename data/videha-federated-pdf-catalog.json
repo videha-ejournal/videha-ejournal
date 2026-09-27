@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-26T19:22:12.850887Z",
+  "generatedAt": "2026-09-27T18:04:13.476711Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 912,
-  "verifiedHashCount": 912,
+  "itemCount": 913,
+  "verifiedHashCount": 913,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -1461,6 +1461,24 @@
       "sha256": "fba757f8dcefeba267f7e07eec33a561eb72f60710023cf657ff2566404a530a",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-22T10:53:33.355696Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Katha_Tridhara_Khand_3.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Katha_Tridhara_Khand_3.pdf",
+      "name": "Katha_Tridhara_Khand_3.pdf",
+      "title": "Katha Tridhara Khand 3",
+      "mediaType": "application/pdf",
+      "bytes": 2940151,
+      "gitBlobSha": "816aa5908b568c1fb45617fa606419fe2242baac",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Katha_Tridhara_Khand_3.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Katha_Tridhara_Khand_3.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Katha_Tridhara_Khand_3.pdf",
+      "sha256": "df0e8f6d326b57822af3a5648029205e2beebf2518f77a6554d37e9c7f4b7532",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-09-27T18:04:13.476711Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
