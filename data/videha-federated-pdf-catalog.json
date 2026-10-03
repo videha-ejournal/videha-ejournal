@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-28T17:59:07.451208Z",
+  "generatedAt": "2026-10-03T13:51:37.374470Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 913,
-  "verifiedHashCount": 913,
+  "itemCount": 914,
+  "verifiedHashCount": 914,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -1734,6 +1734,24 @@
       "translatedAs": "ENGLISH_PREETI_KARAN_SETU_BANHAL.pdf",
       "translatedAsTitle": "Preeti Karan Setu Banhal — English Translation",
       "metadataStatus": "catalogued-scholarly-metadata"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Rang_Sangam_Khand_2.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Rang_Sangam_Khand_2.pdf",
+      "name": "Rang_Sangam_Khand_2.pdf",
+      "title": "Rang Sangam Khand 2",
+      "mediaType": "application/pdf",
+      "bytes": 10411024,
+      "gitBlobSha": "26fc2033f2ba1289d690848945c97545663e23c7",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Rang_Sangam_Khand_2.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Rang_Sangam_Khand_2.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Rang_Sangam_Khand_2.pdf",
+      "sha256": "f56b5a79e90ac4dcfbc92328816effbbdbfeae73ad3373d87438517a5fd282d1",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-03T13:51:37.374470Z",
+      "metadataStatus": "legacy-catalogued"
     },
     {
       "key": "videha-ejournal/videha-ejournal:Saatam_Sakshi.pdf",
