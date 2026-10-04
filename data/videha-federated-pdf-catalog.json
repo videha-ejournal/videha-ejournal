@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T05:53:03.577289Z",
+  "generatedAt": "2026-10-04T09:29:06.012247Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -401,12 +401,12 @@
       "name": "Bijji_Gohi_Sabhak_Beech.pdf",
       "title": "Bijji Gohi Sabhak Beech",
       "mediaType": "application/pdf",
-      "bytes": 2314671,
-      "gitBlobSha": "9085f5249e8d8d1e3aabc6a59f48b4128277492f",
+      "bytes": 2308190,
+      "gitBlobSha": "d2f391b17b71d1c24c0ecccd98e5ee099ef15c31",
       "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Bijji_Gohi_Sabhak_Beech.pdf",
       "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Bijji_Gohi_Sabhak_Beech.pdf",
       "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Bijji_Gohi_Sabhak_Beech.pdf",
-      "sha256": "902e2515c434e8cf59ac68828cf101e0e162cecad3144591f7efbb4ecb9c4307",
+      "sha256": "21e835d748d9c2a3e531e997a4195c861e9cdeb311a227dc90cf91ece37a7384",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-14T10:15:27.928628Z",
       "metadataStatus": "legacy-catalogued"
