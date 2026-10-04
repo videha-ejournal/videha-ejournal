@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-03T13:51:37.374470Z",
+  "generatedAt": "2026-10-04T03:06:17.304714Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 914,
-  "verifiedHashCount": 914,
+  "itemCount": 915,
+  "verifiedHashCount": 915,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -373,6 +373,24 @@
       "sha256": "b5ec131e072ac97e1cd8703f6cb884150762476c2706e1a0dd087010cbeaca7d",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-14T10:15:27.928628Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Anuvadak.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Anuvadak.pdf",
+      "name": "Anuvadak.pdf",
+      "title": "Anuvadak",
+      "mediaType": "application/pdf",
+      "bytes": 5878063,
+      "gitBlobSha": "0004d218e899dfd86b829cf7fa71913effbb2019",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Anuvadak.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Anuvadak.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Anuvadak.pdf",
+      "sha256": "2b3e2cf9bb479faad47a16f84646643184488ba357af64fedc0ac25051eeb2f1",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-04T03:06:17.304714Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
