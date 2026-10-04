@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-04T03:06:17.304714Z",
+  "generatedAt": "2026-10-04T05:53:03.577289Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 915,
-  "verifiedHashCount": 915,
+  "itemCount": 916,
+  "verifiedHashCount": 916,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -1620,6 +1620,24 @@
       "sha256": "624a45d16454430f5d3e30896b4018acba1fbffead5108ac05b8ee8c6134b74c",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-14T10:15:27.928628Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:NAVYA_NYAYA_AND_THE_OFFSHORE_GAMBLING_WEB.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "NAVYA_NYAYA_AND_THE_OFFSHORE_GAMBLING_WEB.pdf",
+      "name": "NAVYA_NYAYA_AND_THE_OFFSHORE_GAMBLING_WEB.pdf",
+      "title": "NAVYA NYAYA AND THE OFFSHORE GAMBLING WEB",
+      "mediaType": "application/pdf",
+      "bytes": 9937181,
+      "gitBlobSha": "af54e88c9783d5e569a1372c1a8f99986bb49880",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/NAVYA_NYAYA_AND_THE_OFFSHORE_GAMBLING_WEB.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/NAVYA_NYAYA_AND_THE_OFFSHORE_GAMBLING_WEB.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/NAVYA_NYAYA_AND_THE_OFFSHORE_GAMBLING_WEB.pdf",
+      "sha256": "a75e35c4e8beef9de646bab8e21d0f64b05a8fb5956b195206f91f4bbb3991ef",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-04T05:53:03.577289Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
