@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-09T16:50:35.935043Z",
+  "generatedAt": "2026-10-09T18:23:56.268749Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 936,
-  "verifiedHashCount": 936,
+  "itemCount": 937,
+  "verifiedHashCount": 937,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -1048,6 +1048,24 @@
       "seriesTitle": "GADYA PADYA BHARTI",
       "seriesPart": 1,
       "metadataStatus": "catalogued-scholarly-metadata"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Gajendra_Thakur_Chayanit_Katha.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Gajendra_Thakur_Chayanit_Katha.pdf",
+      "name": "Gajendra_Thakur_Chayanit_Katha.pdf",
+      "title": "Gajendra Thakur Chayanit Katha",
+      "mediaType": "application/pdf",
+      "bytes": 9460609,
+      "gitBlobSha": "5f59b175a15a327467697bbbca7522e1d5b003d6",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Gajendra_Thakur_Chayanit_Katha.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Gajendra_Thakur_Chayanit_Katha.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Gajendra_Thakur_Chayanit_Katha.pdf",
+      "sha256": "d5d8648ed85dda1e04d1994b09bf1a2697b9a64d3f6f9e4a9bb01ba5a35fb7e4",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-09T18:23:56.268749Z",
+      "metadataStatus": "legacy-catalogued"
     },
     {
       "key": "videha-ejournal/videha-ejournal:GAJENDRA_THAKUR_PARALLEL_PHILOSOPHY.pdf",
