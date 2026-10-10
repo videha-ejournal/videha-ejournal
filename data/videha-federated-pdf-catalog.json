@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T14:47:39.096891Z",
+  "generatedAt": "2026-10-10T15:04:26.166967Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -2562,12 +2562,12 @@
       "name": "VIDEHA_STYLE_MANUAL_MAITHILI.pdf",
       "title": "VIDEHA STYLE MANUAL MAITHILI",
       "mediaType": "application/pdf",
-      "bytes": 2023627,
-      "gitBlobSha": "816daf469903f281d522f36b1ed3338ad58106b1",
+      "bytes": 24465468,
+      "gitBlobSha": "e21664f16d87cdc20005efc65a1a5547ff3d3455",
       "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/VIDEHA_STYLE_MANUAL_MAITHILI.pdf",
       "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/VIDEHA_STYLE_MANUAL_MAITHILI.pdf",
       "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/VIDEHA_STYLE_MANUAL_MAITHILI.pdf",
-      "sha256": "6f9ac8cae18ae130f68bff038d1b9e0f516f434f6f1ff579b6cef5d67e9d1cef",
+      "sha256": "955178808fa26a1186b291365c28c8eda2c56cca3fd3bd5f9d3c63966b561805",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-10T14:47:39.096891Z",
       "metadataStatus": "legacy-catalogued"
