@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T14:11:21.165387Z",
+  "generatedAt": "2026-10-12T01:16:10.741024Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -1147,12 +1147,12 @@
       "name": "Gajendra_Thakur_Chayanit_Katha.pdf",
       "title": "Gajendra Thakur Chayanit Katha",
       "mediaType": "application/pdf",
-      "bytes": 9460609,
-      "gitBlobSha": "5f59b175a15a327467697bbbca7522e1d5b003d6",
+      "bytes": 9467427,
+      "gitBlobSha": "80748a83725908db5b03fc58b283ee4e9c918e55",
       "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Gajendra_Thakur_Chayanit_Katha.pdf",
       "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Gajendra_Thakur_Chayanit_Katha.pdf",
       "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Gajendra_Thakur_Chayanit_Katha.pdf",
-      "sha256": "d5d8648ed85dda1e04d1994b09bf1a2697b9a64d3f6f9e4a9bb01ba5a35fb7e4",
+      "sha256": "3aeedf2815eb5d8345d1eea33bd16996caf5796a3d9b49fba605f3356d3b2883",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-09T18:23:56.268749Z",
       "metadataStatus": "legacy-catalogued"
