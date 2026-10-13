@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-13T04:11:25.045637Z",
+  "generatedAt": "2026-10-13T15:31:46.155540Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 953,
-  "verifiedHashCount": 953,
+  "itemCount": 954,
+  "verifiedHashCount": 954,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -1282,6 +1282,24 @@
       "seriesTitle": "GADYA PADYA BHARTI",
       "seriesPart": 1,
       "metadataStatus": "catalogued-scholarly-metadata"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Gajendra_Thakur_82_Selected_Stories.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Gajendra_Thakur_82_Selected_Stories.pdf",
+      "name": "Gajendra_Thakur_82_Selected_Stories.pdf",
+      "title": "Gajendra Thakur 82 Selected Stories",
+      "mediaType": "application/pdf",
+      "bytes": 8917710,
+      "gitBlobSha": "d737470635fcc5ebdc18b1fdd569845fa49d340c",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Gajendra_Thakur_82_Selected_Stories.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Gajendra_Thakur_82_Selected_Stories.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Gajendra_Thakur_82_Selected_Stories.pdf",
+      "sha256": "98c04ed9602d5437565c2b3e47b37c6f01bd176216b440b0b8026cd5b0916251",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-13T15:31:46.155540Z",
+      "metadataStatus": "legacy-catalogued"
     },
     {
       "key": "videha-ejournal/videha-ejournal:Gajendra_Thakur_Chayanit_Katha.pdf",
