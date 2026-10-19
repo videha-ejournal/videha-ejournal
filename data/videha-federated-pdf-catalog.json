@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-18T10:58:28.281635Z",
+  "generatedAt": "2026-10-19T10:04:55.429100Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 999,
-  "verifiedHashCount": 999,
+  "itemCount": 1000,
+  "verifiedHashCount": 1000,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -2970,6 +2970,24 @@
       "sha256": "acdc58554b62f6acaedaea9514dcda3288c04ed874a4e07041585e935f12e320",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-14T10:15:27.928628Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Nit_Naval_Parmeshwar_Kapari.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Nit_Naval_Parmeshwar_Kapari.pdf",
+      "name": "Nit_Naval_Parmeshwar_Kapari.pdf",
+      "title": "Nit Naval Parmeshwar Kapari",
+      "mediaType": "application/pdf",
+      "bytes": 936154,
+      "gitBlobSha": "ccbb84fcd079b4eb6039bdf570dd99e55fb62069",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Nit_Naval_Parmeshwar_Kapari.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Nit_Naval_Parmeshwar_Kapari.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Nit_Naval_Parmeshwar_Kapari.pdf",
+      "sha256": "fe3ca09998629494d72b355b1b4bafc40d895bf318d1d941a77f99da2212e5f2",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-19T10:04:55.429100Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
