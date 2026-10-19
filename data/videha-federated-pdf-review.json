@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T10:55:07.186801Z",
+  "generatedAt": "2026-10-19T11:12:55.426356Z",
   "owner": "videha-ejournal",
   "reviewCount": 10,
   "instructions": "Machine-verifiable fields are automatic. Edit data/federated-pdf-metadata.json only where scholarly metadata needs an editorial decision.",

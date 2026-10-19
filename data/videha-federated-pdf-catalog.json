@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-19T10:55:07.186801Z",
+  "generatedAt": "2026-10-19T11:12:55.426356Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1003,
-  "verifiedHashCount": 1003,
+  "itemCount": 1004,
+  "verifiedHashCount": 1004,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -3006,6 +3006,24 @@
       "sha256": "0d314cf09b627afea1722213828e1412d0ea25893fc77b4937f3e48f490f7ddc",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-19T10:55:07.186801Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Nit_Naval_Lalita_Jha.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Nit_Naval_Lalita_Jha.pdf",
+      "name": "Nit_Naval_Lalita_Jha.pdf",
+      "title": "Nit Naval Lalita Jha",
+      "mediaType": "application/pdf",
+      "bytes": 736189,
+      "gitBlobSha": "d17fbfb8b217b7bbf88a46e5dc83ae107e45da68",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Nit_Naval_Lalita_Jha.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Nit_Naval_Lalita_Jha.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Nit_Naval_Lalita_Jha.pdf",
+      "sha256": "8a81e9010a0040209ec694ea2d8874480d57d00656fbbac5246a71e737e575d5",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-19T11:12:55.426356Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
