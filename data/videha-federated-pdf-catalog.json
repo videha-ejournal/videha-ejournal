@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-19T11:12:55.426356Z",
+  "generatedAt": "2026-10-19T13:15:21.876612Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1004,
-  "verifiedHashCount": 1004,
+  "itemCount": 1005,
+  "verifiedHashCount": 1005,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -3096,6 +3096,24 @@
       "sha256": "756bcb77020f14506e54e30cb9fcdf3a050d8911ba09341f6ecae303d1c7380e",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-19T10:55:07.186801Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Nit_Naval_Yoganand_Jha.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Nit_Naval_Yoganand_Jha.pdf",
+      "name": "Nit_Naval_Yoganand_Jha.pdf",
+      "title": "Nit Naval Yoganand Jha",
+      "mediaType": "application/pdf",
+      "bytes": 2711200,
+      "gitBlobSha": "744952b49e7443e70c9506fff10b632ead6225b7",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Nit_Naval_Yoganand_Jha.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Nit_Naval_Yoganand_Jha.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Nit_Naval_Yoganand_Jha.pdf",
+      "sha256": "175333d8a9fc5ad85f55c7f5f7937d92e01f502f8f5609fb37f2ca3839eaa70b",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-19T13:15:21.876612Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
