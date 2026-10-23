@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-22T06:51:40.101970Z",
+  "generatedAt": "2026-10-23T18:56:39.237248Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1012,
-  "verifiedHashCount": 1012,
+  "itemCount": 1013,
+  "verifiedHashCount": 1013,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -3132,6 +3132,24 @@
       "sha256": "8a81e9010a0040209ec694ea2d8874480d57d00656fbbac5246a71e737e575d5",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-19T11:12:55.426356Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Nit_Naval_Nand.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Nit_Naval_Nand.pdf",
+      "name": "Nit_Naval_Nand.pdf",
+      "title": "Nit Naval Nand",
+      "mediaType": "application/pdf",
+      "bytes": 2088013,
+      "gitBlobSha": "433d1ce944f9275381b5536793627e987bc86dfc",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Nit_Naval_Nand.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Nit_Naval_Nand.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Nit_Naval_Nand.pdf",
+      "sha256": "33ebccad754c1610921bceb3b09999b1072313fa7454e79fa86eac88b16ec655",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-23T18:56:39.237248Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
