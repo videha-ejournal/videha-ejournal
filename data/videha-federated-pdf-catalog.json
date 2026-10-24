@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-24T04:23:14.441692Z",
+  "generatedAt": "2026-10-24T05:51:46.781920Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1015,
-  "verifiedHashCount": 1015,
+  "itemCount": 1016,
+  "verifiedHashCount": 1016,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -3042,6 +3042,24 @@
       "sha256": "4842747f57a3fce75fab8f4c29131b3dffe4024040f57adccf7361773f2032ea",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-06T01:49:01.053310Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Nit_Naval_Anchinhar.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Nit_Naval_Anchinhar.pdf",
+      "name": "Nit_Naval_Anchinhar.pdf",
+      "title": "Nit Naval Anchinhar",
+      "mediaType": "application/pdf",
+      "bytes": 4165034,
+      "gitBlobSha": "ae85bc1d8513be8b7d703ee006947649261cb5e6",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Nit_Naval_Anchinhar.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Nit_Naval_Anchinhar.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Nit_Naval_Anchinhar.pdf",
+      "sha256": "c3cd8bd3a4b00eb32ff5efbcbe5bdca85694197faf096ddcd1210ff2cb27351a",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-24T05:51:46.781920Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
