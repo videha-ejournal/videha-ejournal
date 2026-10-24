@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-23T18:56:39.237248Z",
+  "generatedAt": "2026-10-24T04:23:14.441692Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1013,
-  "verifiedHashCount": 1013,
+  "itemCount": 1015,
+  "verifiedHashCount": 1015,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -3045,6 +3045,24 @@
       "metadataStatus": "legacy-catalogued"
     },
     {
+      "key": "videha-ejournal/videha-ejournal:Nit_Naval_Bechan.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Nit_Naval_Bechan.pdf",
+      "name": "Nit_Naval_Bechan.pdf",
+      "title": "Nit Naval Bechan",
+      "mediaType": "application/pdf",
+      "bytes": 995762,
+      "gitBlobSha": "71649f84f3535d3e80b7f16ce312b306a9bc7a67",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Nit_Naval_Bechan.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Nit_Naval_Bechan.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Nit_Naval_Bechan.pdf",
+      "sha256": "a75cf49ed7a8a7e9ef42ddf3629bcf181c1f51266289a3ea58a4dce9043c1c78",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-24T04:23:14.441692Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
       "key": "videha-ejournal/videha-ejournal:Nit_Naval_Brikhesh_Chandra_Lal.pdf",
       "repository": "videha-ejournal/videha-ejournal",
       "branch": "main",
@@ -3096,6 +3114,24 @@
       "sha256": "962e6613ead9150825cbf7f341118dbd69afa591bfddff89890fd32912c8e9b9",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-19T10:55:07.186801Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Nit_Naval_Kumar_Pawan.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Nit_Naval_Kumar_Pawan.pdf",
+      "name": "Nit_Naval_Kumar_Pawan.pdf",
+      "title": "Nit Naval Kumar Pawan",
+      "mediaType": "application/pdf",
+      "bytes": 1422782,
+      "gitBlobSha": "4ceb59a8b609d991edfcf60d9f4593e0fa796535",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Nit_Naval_Kumar_Pawan.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Nit_Naval_Kumar_Pawan.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Nit_Naval_Kumar_Pawan.pdf",
+      "sha256": "33ee4aa97de069b473944e84a5c200bde0e8c0a1e1b4ee68621d79cb282b77b6",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-24T04:23:14.441692Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
