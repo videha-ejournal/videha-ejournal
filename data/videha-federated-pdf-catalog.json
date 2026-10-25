@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T14:07:53.730619Z",
+  "generatedAt": "2026-10-25T17:14:33.653490Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -2929,12 +2929,12 @@
       "name": "kurukshetram_kadambari.pdf",
       "title": "kurukshetram kadambari",
       "mediaType": "application/pdf",
-      "bytes": 17523319,
-      "gitBlobSha": "5287d1aad3c74aa4dcd7460f1e1fa7de2e1b4bf7",
+      "bytes": 18405187,
+      "gitBlobSha": "d462cc76878e9e38ea7f208015b0e879c5fbb6b8",
       "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/kurukshetram_kadambari.pdf",
       "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/kurukshetram_kadambari.pdf",
       "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/kurukshetram_kadambari.pdf",
-      "sha256": "a11017b9587899114b9a609eba250bfee90d95464d51d40cef27680dec417a17",
+      "sha256": "7a79a6cee53913d4e01b35497a327dd6f942712db29fd15de89b1f61087f69e9",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-25T14:07:53.730619Z",
       "metadataStatus": "legacy-catalogued"
