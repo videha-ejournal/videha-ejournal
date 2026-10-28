@@ -32,7 +32,7 @@ jobs:
           find . -maxdepth 1 -type f \( -name '*.htm' -o -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.xml' -o -name '*.json' \) -exec cp --parents {} publish/ \;
           find . -maxdepth 1 -type f -name 'editorial_samagra_*.pdf' -exec cp --parents {} publish/ \;
           # Keep explicitly published book PDFs available without packaging the full PDF corpus.
-          for f in kurukshetram_kadambari.pdf VIDEHA_Parallel_History.pdf Water_Burial_Children.pdf Water_Burial_Young.pdf CODE_NAME.pdf; do
+          for f in kurukshetram_kadambari.pdf VIDEHA_Parallel_History.pdf Water_Burial_Children.pdf Water_Burial_Young.pdf CODE_NAME.pdf New_Wings.pdf; do
             if [ -f "$f" ]; then cp --parents "$f" publish/; fi
           done
           for d in assets research search-documents data; do
