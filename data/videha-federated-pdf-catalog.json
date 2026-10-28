@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T10:50:25.615019Z",
+  "generatedAt": "2026-10-28T11:23:08.152755Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -4034,12 +4034,12 @@
       "name": "Water_Burial_Children.pdf",
       "title": "Water Burial Children",
       "mediaType": "application/pdf",
-      "bytes": 97766732,
-      "gitBlobSha": "23d18ec11872d133a8ca02d14836f4f4959c7e73",
+      "bytes": 90706702,
+      "gitBlobSha": "0d6c3e12429f42396d2bf90e6fd3dd0e51005031",
       "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Water_Burial_Children.pdf",
       "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Water_Burial_Children.pdf",
       "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Water_Burial_Children.pdf",
-      "sha256": "cbdd66aa5d0955fca290b427a89ec1f38e8da5ac7826ec455cc6f25502910d52",
+      "sha256": "e7f701fd4199055c623f1ca08e2fcece8fc0aa3018dd9783cc31b1309d286b94",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-28T10:50:25.615019Z",
       "metadataStatus": "legacy-catalogued"
