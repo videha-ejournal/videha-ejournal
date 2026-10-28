@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-28T12:38:25.027279Z",
+  "generatedAt": "2026-10-28T12:42:25.047194Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1024,
-  "verifiedHashCount": 1024,
+  "itemCount": 1025,
+  "verifiedHashCount": 1025,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -4060,6 +4060,24 @@
       "sha256": "e7f701fd4199055c623f1ca08e2fcece8fc0aa3018dd9783cc31b1309d286b94",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-28T10:50:25.615019Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Water_Burial_Young.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Water_Burial_Young.pdf",
+      "name": "Water_Burial_Young.pdf",
+      "title": "Water Burial Young",
+      "mediaType": "application/pdf",
+      "bytes": 69826035,
+      "gitBlobSha": "753ca495301d2b5dd6900b182d93a3007efec1b9",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Water_Burial_Young.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Water_Burial_Young.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Water_Burial_Young.pdf",
+      "sha256": "0b2ea93f4db336f498a6a06fb0a73c52ef1bf2632d3af24afd359e3083a2ce39",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-28T12:42:25.047194Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
