@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-28T13:02:41.833446Z",
+  "generatedAt": "2026-10-28T16:56:26.805659Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1025,
-  "verifiedHashCount": 1025,
+  "itemCount": 1026,
+  "verifiedHashCount": 1026,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -3168,6 +3168,24 @@
       "sha256": "4842747f57a3fce75fab8f4c29131b3dffe4024040f57adccf7361773f2032ea",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-06T01:49:01.053310Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:New_Wings.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "New_Wings.pdf",
+      "name": "New_Wings.pdf",
+      "title": "New Wings",
+      "mediaType": "application/pdf",
+      "bytes": 9382985,
+      "gitBlobSha": "c174ea7dbe1b23be2d1920a7afc80164481b23f8",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/New_Wings.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/New_Wings.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/New_Wings.pdf",
+      "sha256": "dd3befb1d64d43d7bae78b56ae6d30067e4f42ce053536b16f53e711fe48d09f",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-28T16:56:26.805659Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
