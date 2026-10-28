@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-28T04:47:27.885299Z",
+  "generatedAt": "2026-10-28T10:50:25.615019Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1021,
-  "verifiedHashCount": 1021,
+  "itemCount": 1023,
+  "verifiedHashCount": 1023,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -445,6 +445,24 @@
       "sha256": "21e835d748d9c2a3e531e997a4195c861e9cdeb311a227dc90cf91ece37a7384",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-14T10:15:27.928628Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:CODE_NAME.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "CODE_NAME.pdf",
+      "name": "CODE_NAME.pdf",
+      "title": "CODE NAME",
+      "mediaType": "application/pdf",
+      "bytes": 13492601,
+      "gitBlobSha": "cbefec55d425f183b948554e7bbc4b12e9e748d5",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/CODE_NAME.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/CODE_NAME.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/CODE_NAME.pdf",
+      "sha256": "e599fb1dbe42a0ffb45ac5a168da9931b743dbdc0e3cba4ea6115c3fabb879ec",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-28T10:50:25.615019Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
@@ -4007,6 +4025,24 @@
       "translationOf": "Gohi_Sabhak_Beech_Jalsamadhi.pdf",
       "translationOfTitle": "Gohi Sabhak Beech Jalsamadhi — Principal Maithili Novel",
       "metadataStatus": "catalogued-scholarly-metadata"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Water_Burial_Children.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Water_Burial_Children.pdf",
+      "name": "Water_Burial_Children.pdf",
+      "title": "Water Burial Children",
+      "mediaType": "application/pdf",
+      "bytes": 97766732,
+      "gitBlobSha": "23d18ec11872d133a8ca02d14836f4f4959c7e73",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Water_Burial_Children.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Water_Burial_Children.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Water_Burial_Children.pdf",
+      "sha256": "cbdd66aa5d0955fca290b427a89ec1f38e8da5ac7826ec455cc6f25502910d52",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-28T10:50:25.615019Z",
+      "metadataStatus": "legacy-catalogued"
     },
     {
       "key": "videha-ejournal/videha-ejournal:WATER_REGISTER.pdf",
