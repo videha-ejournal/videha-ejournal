@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-28T16:56:26.805659Z",
+  "generatedAt": "2026-10-29T01:59:42.007496Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1026,
-  "verifiedHashCount": 1026,
+  "itemCount": 1027,
+  "verifiedHashCount": 1027,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -2955,6 +2955,24 @@
       "sha256": "0a5d30c82b9fa4856ed6f18a2d6e6515557f1abac3ae1debbe03529c3d4b483b",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-27T18:04:13.476711Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Kurukshetram_English.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Kurukshetram_English.pdf",
+      "name": "Kurukshetram_English.pdf",
+      "title": "Kurukshetram English",
+      "mediaType": "application/pdf",
+      "bytes": 5757499,
+      "gitBlobSha": "308696e2182e19388f9dc08d48edc60d0ec47aba",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Kurukshetram_English.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Kurukshetram_English.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Kurukshetram_English.pdf",
+      "sha256": "54d573ab3d8257f35dc3545829339dc17564acc5ea297dd74235be8d9014da9e",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-10-29T01:59:42.007496Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
