@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-02T10:47:49.656055Z",
+  "generatedAt": "2026-11-02T10:59:45.613894Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1049,
-  "verifiedHashCount": 1049,
+  "itemCount": 1050,
+  "verifiedHashCount": 1050,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -3348,6 +3348,24 @@
       "sha256": "d0e55deb3f73f59b1a5635dc5a68c9bf908f5489be7491f17f25cba507998eb5",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-06T01:49:01.053310Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Narratology_Maithili.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Narratology_Maithili.pdf",
+      "name": "Narratology_Maithili.pdf",
+      "title": "Narratology Maithili",
+      "mediaType": "application/pdf",
+      "bytes": 10777085,
+      "gitBlobSha": "84e640a9ecb0ceb5d1e2fc93fa2cb1d1c1905c75",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Narratology_Maithili.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Narratology_Maithili.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Narratology_Maithili.pdf",
+      "sha256": "1a05405a5d10669f69210c803d0b591c5d4688bd3e32e6b063eac9bb9ed202e9",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-02T10:59:45.613894Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
