@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T12:02:57.684004Z",
+  "generatedAt": "2026-11-04T12:59:56.466882Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -4380,12 +4380,12 @@
       "name": "VIDEHA_Parallel_History2.pdf",
       "title": "VIDEHA Parallel History2",
       "mediaType": "application/pdf",
-      "bytes": 14537968,
-      "gitBlobSha": "1b6458fdd1c6dd756504aeabb773a355af7895dd",
+      "bytes": 28048015,
+      "gitBlobSha": "e20719d398377fc82a20a7b98885e9f28d6172ce",
       "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/VIDEHA_Parallel_History2.pdf",
       "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/VIDEHA_Parallel_History2.pdf",
       "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/VIDEHA_Parallel_History2.pdf",
-      "sha256": "4abccd78b1a702418b6e12d49f06fe646eea9852bd81bbf1286c6a658f243890",
+      "sha256": "27e672179a854141757bf7e80aad1d839c33d0f1b81609de4b1ac408e784c55f",
       "hashStatus": "verified",
       "firstSeenAt": "2026-11-04T12:02:57.684004Z",
       "metadataStatus": "legacy-catalogued"
