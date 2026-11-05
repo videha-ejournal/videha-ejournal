@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-04T19:36:55.567148Z",
+  "generatedAt": "2026-11-05T04:41:53.541890Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1057,
-  "verifiedHashCount": 1057,
+  "itemCount": 1058,
+  "verifiedHashCount": 1058,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -607,6 +607,24 @@
       "sha256": "45b93cc035538b1f2034d815c3542f10923dd96c6b95cf862f7696d4d5778dc5",
       "hashStatus": "verified",
       "firstSeenAt": "2026-11-04T18:34:13.282715Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Bharat_2027_English.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Bharat_2027_English.pdf",
+      "name": "Bharat_2027_English.pdf",
+      "title": "Bharat 2027 English",
+      "mediaType": "application/pdf",
+      "bytes": 3208551,
+      "gitBlobSha": "7343e710b4f1e9885e46e00c4acb425966506c8d",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Bharat_2027_English.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Bharat_2027_English.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Bharat_2027_English.pdf",
+      "sha256": "76e1ee946648d2c670236ef98db639eda4dff02b5970d1627bec045e0f7d15b5",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-05T04:41:53.541890Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
