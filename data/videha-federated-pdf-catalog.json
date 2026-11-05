@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T10:26:06.491061Z",
+  "generatedAt": "2026-11-05T11:15:06.001178Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -8,9 +8,7 @@
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
-  "warnings": [
-    "videha-ejournal/videha-literature-festival: tree discovery failed: HTTP Error 500: Internal Server Error"
-  ],
+  "warnings": [],
   "items": [
     {
       "key": "videha-ejournal/gajendra-preeti:dist/client/gajendra-preeti/books/g0.pdf",
