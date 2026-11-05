@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T08:14:38.281513Z",
+  "generatedAt": "2026-11-05T10:03:46.562066Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -2111,12 +2111,12 @@
       "name": "editorial_samagra_72.pdf",
       "title": "editorial samagra 72",
       "mediaType": "application/pdf",
-      "bytes": 927374,
-      "gitBlobSha": "69fcefc067205f99ddf83c0b958d3846b0c4e257",
+      "bytes": 2506695,
+      "gitBlobSha": "d536aa116d15afa4578e3b0226ffd6f7e956fbdc",
       "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/editorial_samagra_72.pdf",
       "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/editorial_samagra_72.pdf",
       "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/editorial_samagra_72.pdf",
-      "sha256": "1db85976d3aec2883fa7abafc2d104974ea5422215c0e5ec7fd9c52a40dbedc0",
+      "sha256": "1ab81e96978c9cd3d4390c2ab726c3cf89472b76251628276708264f3d3be885",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-24T09:03:36.550977Z",
       "metadataStatus": "legacy-catalogued"
