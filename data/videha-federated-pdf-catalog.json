@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-05T04:41:53.541890Z",
+  "generatedAt": "2026-11-05T08:14:38.281513Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1058,
-  "verifiedHashCount": 1058,
+  "itemCount": 1059,
+  "verifiedHashCount": 1059,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -4478,6 +4478,24 @@
       "sha256": "7eca7a5ee503892fa484823e8592f0b8d2729f68f394f1a8be0397e38060774a",
       "hashStatus": "verified",
       "firstSeenAt": "2026-11-04T12:02:57.684004Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:VIDEHA_Parallel_History3.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "VIDEHA_Parallel_History3.pdf",
+      "name": "VIDEHA_Parallel_History3.pdf",
+      "title": "VIDEHA Parallel History3",
+      "mediaType": "application/pdf",
+      "bytes": 7846139,
+      "gitBlobSha": "c3d605506719e556091554ae1afdc364116ce749",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/VIDEHA_Parallel_History3.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/VIDEHA_Parallel_History3.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/VIDEHA_Parallel_History3.pdf",
+      "sha256": "388399c1722b7948e0b306df83ac349794c3702c9092da9cc4b4874f84c9a0f4",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-05T08:14:38.281513Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
