@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-05T11:15:06.001178Z",
+  "generatedAt": "2026-11-06T04:04:38.243866Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1060,
-  "verifiedHashCount": 1060,
+  "itemCount": 1061,
+  "verifiedHashCount": 1061,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -2874,6 +2874,24 @@
       "sha256": "fff74d93d84cfab740399e91ef166be617b75ed04c175c25344e9c7047c6609b",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-16T14:14:53.280879Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Gajendra_Thakur_Samagra_Sampadakiya2.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Gajendra_Thakur_Samagra_Sampadakiya2.pdf",
+      "name": "Gajendra_Thakur_Samagra_Sampadakiya2.pdf",
+      "title": "Gajendra Thakur Samagra Sampadakiya2",
+      "mediaType": "application/pdf",
+      "bytes": 26980936,
+      "gitBlobSha": "cefcdc5901f6d130233af61477072deed43b2915",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Gajendra_Thakur_Samagra_Sampadakiya2.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Gajendra_Thakur_Samagra_Sampadakiya2.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Gajendra_Thakur_Samagra_Sampadakiya2.pdf",
+      "sha256": "e5c9c7f5ed4e2d797344327bed9f5d3cf9fc21ea6b9444a02888ffe7d52219c5",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-06T04:04:38.243866Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
