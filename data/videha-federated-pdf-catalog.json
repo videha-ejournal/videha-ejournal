@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T13:43:22.400268Z",
+  "generatedAt": "2026-11-09T15:29:28.939006Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -4078,12 +4078,12 @@
       "name": "Parallel_History_Teacher_II.pdf",
       "title": "Parallel History Teacher II",
       "mediaType": "application/pdf",
-      "bytes": 41669714,
-      "gitBlobSha": "fbea63a832ea3c2fb104a00714f9b22675bda6aa",
+      "bytes": 60373538,
+      "gitBlobSha": "7909beb23e6adc8b0dba7dc20ac67a418799c6ac",
       "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Parallel_History_Teacher_II.pdf",
       "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Parallel_History_Teacher_II.pdf",
       "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Parallel_History_Teacher_II.pdf",
-      "sha256": "ab7830706ffc46bbaf9f37be57f752b60d1eeae7c0ab68b82bee407908b13268",
+      "sha256": "5454be2b77d115644953b582eb864a124647f03eab10d9f06c2ce22a8b5ecfd3",
       "hashStatus": "verified",
       "firstSeenAt": "2026-11-09T04:24:27.081653Z",
       "metadataStatus": "legacy-catalogued"
