@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-09T10:48:21.186271Z",
+  "generatedAt": "2026-11-09T11:23:38.050870Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1074,
-  "verifiedHashCount": 1074,
+  "itemCount": 1075,
+  "verifiedHashCount": 1075,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -4352,6 +4352,24 @@
       "sha256": "98170167b2d82bda55f98bed635b07e5e8a1d437ece0503ddee5b6013d55d6ba",
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-14T10:15:27.928628Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Tattvacintamani_Teacher.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Tattvacintamani_Teacher.pdf",
+      "name": "Tattvacintamani_Teacher.pdf",
+      "title": "Tattvacintamani Teacher",
+      "mediaType": "application/pdf",
+      "bytes": 63845800,
+      "gitBlobSha": "4c69439ad16b858e43da7efa62b6cf5e3d576dc3",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Tattvacintamani_Teacher.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Tattvacintamani_Teacher.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Tattvacintamani_Teacher.pdf",
+      "sha256": "f24cfaa26a1bb784cfe2d75d6b9b173cc96448bb3706ecc0a2a61533e24ca092",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-09T11:23:38.050870Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
