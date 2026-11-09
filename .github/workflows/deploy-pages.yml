@@ -32,7 +32,7 @@ jobs:
           find . -maxdepth 1 -type f \( -name '*.htm' -o -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.xml' -o -name '*.json' \) -exec cp --parents {} publish/ \;
           find . -maxdepth 1 -type f -name 'editorial_samagra_*.pdf' -exec cp --parents {} publish/ \;
           # Keep explicitly published book PDFs available without packaging the full PDF corpus.
-          for f in kurukshetram_kadambari.pdf Kurukshetram_English.pdf VIDEHA_Parallel_History.pdf Water_Burial_Children.pdf Water_Burial_Young.pdf CODE_NAME.pdf New_Wings.pdf katha_saar.pdf Narratology_Maithili.pdf Gajendra_Thakur_Samagra_PNS2.pdf VIDEHA_Parallel_History2.pdf Bharat_2027.pdf Bharat_2027_English.pdf VIDEHA_Parallel_History3.pdf Gajendra_Thakur_Samagra_Sampadakiya2.pdf; do
+          for f in kurukshetram_kadambari.pdf Kurukshetram_English.pdf VIDEHA_Parallel_History.pdf Water_Burial_Children.pdf Water_Burial_Young.pdf CODE_NAME.pdf New_Wings.pdf katha_saar.pdf Narratology_Maithili.pdf Gajendra_Thakur_Samagra_PNS2.pdf VIDEHA_Parallel_History2.pdf Bharat_2027.pdf Bharat_2027_English.pdf VIDEHA_Parallel_History3.pdf Gajendra_Thakur_Samagra_Sampadakiya2.pdf BHARAT_2027_TEACHER.pdf NAVYA_NYAYA_NOVEL_TEACHER.pdf Parallel_History_Teacher_I.pdf Parallel_History_Teacher_III.pdf The_Translator_Teacher.pdf; do
             if [ -f "$f" ]; then cp --parents "$f" publish/; fi
           done
           for d in assets research search-documents data; do
