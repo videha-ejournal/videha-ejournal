@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-09T11:23:38.050870Z",
+  "generatedAt": "2026-11-09T13:43:22.400268Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1075,
-  "verifiedHashCount": 1075,
+  "itemCount": 1076,
+  "verifiedHashCount": 1076,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -3582,6 +3582,24 @@
       "sha256": "18e0cc50f58c163f49c0f67262d1b87a8c58be915c2e051e572d26de5a54e0c6",
       "hashStatus": "verified",
       "firstSeenAt": "2026-11-09T10:48:21.186271Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:Mithila_Vajji_Anga_II_Teacher.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "Mithila_Vajji_Anga_II_Teacher.pdf",
+      "name": "Mithila_Vajji_Anga_II_Teacher.pdf",
+      "title": "Mithila Vajji Anga II Teacher",
+      "mediaType": "application/pdf",
+      "bytes": 12648633,
+      "gitBlobSha": "bcf8cae7730dee479b121ec1ab4d02d86528be82",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/Mithila_Vajji_Anga_II_Teacher.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/Mithila_Vajji_Anga_II_Teacher.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/Mithila_Vajji_Anga_II_Teacher.pdf",
+      "sha256": "076b871ffd1942a1b6c5f48ffea6d05ab30ec3ac805c06608f31e23e55719e84",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-09T13:43:22.400268Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
