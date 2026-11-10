@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T12:04:45.258704Z",
+  "generatedAt": "2026-11-10T14:22:40.650301Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
@@ -3261,24 +3261,6 @@
       "sha256": "02b5971ee6b1e8abfde1e0a9f6fd0c1c6f52bf5bc1b57d19b9e04fcead06d124",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-31T02:59:44.123242Z",
-      "metadataStatus": "legacy-catalogued"
-    },
-    {
-      "key": "videha-ejournal/videha-ejournal:katha_saar.pdf",
-      "repository": "videha-ejournal/videha-ejournal",
-      "branch": "main",
-      "path": "katha_saar.pdf",
-      "name": "katha_saar.pdf",
-      "title": "katha saar",
-      "mediaType": "application/pdf",
-      "bytes": 7244108,
-      "gitBlobSha": "973ddb5b47ceae30d32f219ca23b3fdbe1d03999",
-      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/katha_saar.pdf",
-      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/katha_saar.pdf",
-      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/katha_saar.pdf",
-      "sha256": "45fe0d6b0db4fb73392201128ddb3480bebf5a2f396cd8efdd7682d57eab8718",
-      "hashStatus": "verified",
-      "firstSeenAt": "2026-11-01T20:12:07.620488Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
@@ -19594,6 +19576,24 @@
       "sha256": "9b3b5986738b96442290244866ecbc79c32ba5c8f4764c1cd3adbfdadbbdc695",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-30T10:16:03.597863Z",
+      "metadataStatus": "machine-complete"
+    },
+    {
+      "key": "videha-ejournal/videha-sadeha:Videha 453.pdf",
+      "repository": "videha-ejournal/videha-sadeha",
+      "branch": "main",
+      "path": "Videha 453.pdf",
+      "name": "Videha 453.pdf",
+      "title": "Videha 453",
+      "mediaType": "application/pdf",
+      "bytes": 50392307,
+      "gitBlobSha": "4643ce89d29c844619fd0cfc4bbcaa02bb87badb",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-sadeha/Videha%20453.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-sadeha/main/Videha%20453.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-sadeha/blob/main/Videha%20453.pdf",
+      "sha256": "7f5241b4c991ba1942fb53887a7b5389c6b5b79b15369c0a53e44ef8a3998887",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-10T14:22:40.650301Z",
       "metadataStatus": "machine-complete"
     }
   ]
