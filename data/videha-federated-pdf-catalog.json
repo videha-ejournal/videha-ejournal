@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-10T14:22:40.650301Z",
+  "generatedAt": "2026-11-10T14:35:05.889980Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1076,
-  "verifiedHashCount": 1076,
+  "itemCount": 1077,
+  "verifiedHashCount": 1077,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -4997,6 +4997,24 @@
       "hashStatus": "verified",
       "firstSeenAt": "2026-09-14T10:15:27.928628Z",
       "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal.github.io:katha_saar.pdf",
+      "repository": "videha-ejournal/videha-ejournal.github.io",
+      "branch": "main",
+      "path": "katha_saar.pdf",
+      "name": "katha_saar.pdf",
+      "title": "katha saar",
+      "mediaType": "application/pdf",
+      "bytes": 11550065,
+      "gitBlobSha": "b6739827169db4e9f715e28b61571d4b58c78120",
+      "pagesUrl": "https://videha-ejournal.github.io/katha_saar.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal.github.io/main/katha_saar.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal.github.io/blob/main/katha_saar.pdf",
+      "sha256": "393be78163692955b3b1750d466dbe921f60b6d8211e7e516edd9888ca4a05c5",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-10T14:35:05.889980Z",
+      "metadataStatus": "machine-complete"
     },
     {
       "key": "videha-ejournal/videha-ejournal.github.io:Videha-Quiz-bpsc-Vol-01.pdf",
