@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-10T14:35:05.889980Z",
+  "generatedAt": "2026-11-10T14:45:47.942850Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 8,
-  "itemCount": 1077,
-  "verifiedHashCount": 1077,
+  "itemCount": 1078,
+  "verifiedHashCount": 1078,
   "pendingHashCount": 0,
   "metadataReviewCount": 10,
   "hashBudgetBytes": 1073741824,
@@ -3261,6 +3261,24 @@
       "sha256": "02b5971ee6b1e8abfde1e0a9f6fd0c1c6f52bf5bc1b57d19b9e04fcead06d124",
       "hashStatus": "verified",
       "firstSeenAt": "2026-10-31T02:59:44.123242Z",
+      "metadataStatus": "legacy-catalogued"
+    },
+    {
+      "key": "videha-ejournal/videha-ejournal:katha_saar.pdf",
+      "repository": "videha-ejournal/videha-ejournal",
+      "branch": "main",
+      "path": "katha_saar.pdf",
+      "name": "katha_saar.pdf",
+      "title": "katha saar",
+      "mediaType": "application/pdf",
+      "bytes": 11550065,
+      "gitBlobSha": "b6739827169db4e9f715e28b61571d4b58c78120",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-ejournal/katha_saar.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-ejournal/main/katha_saar.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-ejournal/blob/main/katha_saar.pdf",
+      "sha256": "393be78163692955b3b1750d466dbe921f60b6d8211e7e516edd9888ca4a05c5",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-10T14:45:47.942850Z",
       "metadataStatus": "legacy-catalogued"
     },
     {
