@@ -29,6 +29,7 @@ jobs:
           set -euo pipefail
           rm -rf publish
           mkdir publish
+          find . -maxdepth 1 -type f -name 'editorial_samagra_*.pdf' -exec cp --parents {} publish/ \;
           find . -maxdepth 1 -type f \( -name '*.htm' -o -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.xml' -o -name '*.json' \) -exec cp --parents {} publish/ \;
           find . -maxdepth 1 -type f -name 'editorial_samagra_*.pdf' -exec cp --parents {} publish/ \;
           # Keep explicitly published book PDFs available without packaging the full PDF corpus.
