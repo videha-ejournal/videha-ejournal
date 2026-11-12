@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T15:26:00.993453Z",
+  "generatedAt": "2026-11-12T11:32:44.321327Z",
   "owner": "videha-ejournal",
-  "reviewCount": 10,
+  "reviewCount": 14,
   "instructions": "Machine-verifiable fields are automatic. Edit data/federated-pdf-metadata.json only where scholarly metadata needs an editorial decision.",
   "items": [
     {
@@ -92,6 +92,42 @@
       "path": "Videha_Maithili_English_Thesaurus_Part_05_of_05.pdf",
       "suggestedTitle": "Videha Maithili English Thesaurus Part 05 of 05",
       "sha256": "3574b4f9cc2a02ff404916b89e210dd365deab1e6d003da57b24513378661c07",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:Agnivansh_English.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "Agnivansh_English.pdf",
+      "suggestedTitle": "Agnivansh English",
+      "sha256": "f9c2914f3c02eb0bacbb8122f5e7b72185d8660674bf06424ef44d48845d2afe",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:Agnivansh_English_Teacher.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "Agnivansh_English_Teacher.pdf",
+      "suggestedTitle": "Agnivansh English Teacher",
+      "sha256": "5ac449e5033cd7e57b016445594cb8c14fd9519bd3eaf6b8a4c248e65e9f9fdd",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_80.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_80.pdf",
+      "suggestedTitle": "editorial samagra 80",
+      "sha256": "a3ed021d9df94dc9a80392eb663a0e7899c50f925d1bda10017141d5e683398a",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_81.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_81.pdf",
+      "suggestedTitle": "editorial samagra 81",
+      "sha256": "4da5f8483ff26f5cbd2e3d83b2b6c895a0f35466e0ea5fb9ec66a80d3ee86029",
       "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     }
