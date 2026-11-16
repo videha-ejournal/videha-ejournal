@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-12T11:32:44.321327Z",
+  "generatedAt": "2026-11-16T11:47:59.513765Z",
   "schemaVersion": 1,
   "owner": "videha-ejournal",
   "repositoryCount": 9,
-  "itemCount": 1087,
-  "verifiedHashCount": 1087,
+  "itemCount": 1089,
+  "verifiedHashCount": 1089,
   "pendingHashCount": 0,
-  "metadataReviewCount": 14,
+  "metadataReviewCount": 15,
   "hashBudgetBytes": 1073741824,
   "warnings": [],
   "items": [
@@ -10867,6 +10867,24 @@
       "metadataStatus": "review-needed"
     },
     {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_82.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "branch": "main",
+      "path": "editorial_samagra_82.pdf",
+      "name": "editorial_samagra_82.pdf",
+      "title": "editorial samagra 82",
+      "mediaType": "application/pdf",
+      "bytes": 1043949,
+      "gitBlobSha": "7962c0ea70e9befb40d3ee65ef03d2f3c0653be3",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-repository/editorial_samagra_82.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-repository/main/editorial_samagra_82.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-repository/blob/main/editorial_samagra_82.pdf",
+      "sha256": "8a24d836c0334a1e83216b01e886652f16cdcab623392403195e0633d39a1f95",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-16T11:47:59.513765Z",
+      "metadataStatus": "review-needed"
+    },
+    {
       "key": "videha-ejournal/videha-repository:katha_saar.pdf",
       "repository": "videha-ejournal/videha-repository",
       "branch": "main",
@@ -10882,6 +10900,24 @@
       "sha256": "5325953d56b85a93a2c64c0594a1921e6e46c81d20622bdeb7372b61f76b543a",
       "hashStatus": "verified",
       "firstSeenAt": "2026-11-10T15:26:00.993453Z",
+      "metadataStatus": "machine-complete"
+    },
+    {
+      "key": "videha-ejournal/videha-repository:Nit_Naval_Kailash.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "branch": "main",
+      "path": "Nit_Naval_Kailash.pdf",
+      "name": "Nit_Naval_Kailash.pdf",
+      "title": "Nit Naval Kailash",
+      "mediaType": "application/pdf",
+      "bytes": 1821330,
+      "gitBlobSha": "e72989559a5912efca7ec3cc4d921166c0284bb8",
+      "pagesUrl": "https://videha-ejournal.github.io/videha-repository/Nit_Naval_Kailash.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/videha-ejournal/videha-repository/main/Nit_Naval_Kailash.pdf",
+      "repositoryUrl": "https://github.com/videha-ejournal/videha-repository/blob/main/Nit_Naval_Kailash.pdf",
+      "sha256": "c14ceeb6b53545c7e73399cde32f221a7ca05845b28a25b0d1642aaa026281c4",
+      "hashStatus": "verified",
+      "firstSeenAt": "2026-11-16T11:47:59.513765Z",
       "metadataStatus": "machine-complete"
     },
     {
