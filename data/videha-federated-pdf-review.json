@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17T12:08:57.586169Z",
+  "generatedAt": "2026-11-18T11:58:28.766466Z",
   "owner": "videha-ejournal",
-  "reviewCount": 15,
+  "reviewCount": 22,
   "instructions": "Machine-verifiable fields are automatic. Edit data/federated-pdf-metadata.json only where scholarly metadata needs an editorial decision.",
   "items": [
     {
@@ -137,6 +137,69 @@
       "path": "editorial_samagra_82.pdf",
       "suggestedTitle": "editorial samagra 82",
       "sha256": "8a24d836c0334a1e83216b01e886652f16cdcab623392403195e0633d39a1f95",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_83.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_83.pdf",
+      "suggestedTitle": "editorial samagra 83",
+      "sha256": "6e017f4a27352976268bcabea2a6c588d0f67995da6646db33606a1b5c994f5a",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_84.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_84.pdf",
+      "suggestedTitle": "editorial samagra 84",
+      "sha256": "0992995ffbcd1fd23706707da41b08bdd40888883030bd72e92081f3f75f6988",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_85.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_85.pdf",
+      "suggestedTitle": "editorial samagra 85",
+      "sha256": "38c229a236c7eb57b32d73241ac335fb32fbad72e2f0f98a7d50396c804ea9db",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_86.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_86.pdf",
+      "suggestedTitle": "editorial samagra 86",
+      "sha256": "801be1aeac9b0c39f56b220b56f71ddf48133fd4b71589dfdf7f3716919a8fa2",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_87.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_87.pdf",
+      "suggestedTitle": "editorial samagra 87",
+      "sha256": "e880aef3a6fe5664296a52d9ff7fc9b15fbd4132d597135e899595de507c21a5",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_88.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_88.pdf",
+      "suggestedTitle": "editorial samagra 88",
+      "sha256": "cc5b8fb668a908988c8f7a3a947d5ba7fe160fa2fccd0696fe6f8ac82cfbda38",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_89.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_89.pdf",
+      "suggestedTitle": "editorial samagra 89",
+      "sha256": "329a6fa7511b6abcd6c7eeba77f6f73e301e72f4a516229303e202b9e54255c1",
       "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     }
