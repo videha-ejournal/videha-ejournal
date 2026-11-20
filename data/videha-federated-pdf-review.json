@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T11:58:28.766466Z",
+  "generatedAt": "2026-11-20T11:57:02.805319Z",
   "owner": "videha-ejournal",
-  "reviewCount": 22,
+  "reviewCount": 24,
   "instructions": "Machine-verifiable fields are automatic. Edit data/federated-pdf-metadata.json only where scholarly metadata needs an editorial decision.",
   "items": [
     {
@@ -200,6 +200,24 @@
       "path": "editorial_samagra_89.pdf",
       "suggestedTitle": "editorial samagra 89",
       "sha256": "329a6fa7511b6abcd6c7eeba77f6f73e301e72f4a516229303e202b9e54255c1",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:katha_saar_Teaching_English.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "katha_saar_Teaching_English.pdf",
+      "suggestedTitle": "katha saar Teaching English",
+      "sha256": "8a2aee8dba49ed65a1c712daeb0c247108cd2e42f565c2a67254bbb71896ec58",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:katha_sansar_Teaching_English.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "katha_sansar_Teaching_English.pdf",
+      "suggestedTitle": "katha sansar Teaching English",
+      "sha256": "4746dafe677b00f4b6cdeabbf1930bc3bae0b256ac673f896144c2083d0ab8cc",
       "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     }
