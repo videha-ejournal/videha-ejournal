@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-20T11:57:02.805319Z",
+  "generatedAt": "2026-11-22T11:43:06.046711Z",
   "owner": "videha-ejournal",
-  "reviewCount": 24,
+  "reviewCount": 25,
   "instructions": "Machine-verifiable fields are automatic. Edit data/federated-pdf-metadata.json only where scholarly metadata needs an editorial decision.",
   "items": [
     {
@@ -200,6 +200,15 @@
       "path": "editorial_samagra_89.pdf",
       "suggestedTitle": "editorial samagra 89",
       "sha256": "329a6fa7511b6abcd6c7eeba77f6f73e301e72f4a516229303e202b9e54255c1",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:editorial_samagra_90.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "editorial_samagra_90.pdf",
+      "suggestedTitle": "editorial samagra 90",
+      "sha256": "1c80af0ec0ee8b05eff4ef0bb20704273c69e794444f4698ced304883da14bfd",
       "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     },
