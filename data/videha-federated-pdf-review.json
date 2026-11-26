@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T11:43:06.046711Z",
+  "generatedAt": "2026-11-26T12:55:17.210712Z",
   "owner": "videha-ejournal",
-  "reviewCount": 25,
+  "reviewCount": 26,
   "instructions": "Machine-verifiable fields are automatic. Edit data/federated-pdf-metadata.json only where scholarly metadata needs an editorial decision.",
   "items": [
     {
@@ -227,6 +227,15 @@
       "path": "katha_sansar_Teaching_English.pdf",
       "suggestedTitle": "katha sansar Teaching English",
       "sha256": "4746dafe677b00f4b6cdeabbf1930bc3bae0b256ac673f896144c2083d0ab8cc",
+      "hashStatus": "verified",
+      "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
+    },
+    {
+      "key": "videha-ejournal/videha-repository:Natak_Katha_Sansar_Teaching_English.pdf",
+      "repository": "videha-ejournal/videha-repository",
+      "path": "Natak_Katha_Sansar_Teaching_English.pdf",
+      "suggestedTitle": "Natak Katha Sansar Teaching English",
+      "sha256": "15c22be0c56a43da142a42a69ba893a6769cc6bf53709008a7b92a50ebec90ab",
       "hashStatus": "verified",
       "editorialDecision": "Review only if title, authorship, language, translation/editorship, edition or source relationships require scholarly correction."
     }
